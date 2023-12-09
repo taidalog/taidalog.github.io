@@ -1,0 +1,227 @@
+/*
+  taidalog's portfolio Version 0.1.0
+  https://github.com/taidalog/taidalog.github.io
+  Copyright (c) 2023 taidalog
+  This software is licensed under the MIT License.
+  https://github.com/taidalog/taidalog.github.io/blob/main/LICENSE
+*/
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+html {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    color: #444444;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.75;
+}
+
+h1 {
+    color: #65a2ac;
+    font-family: 'Zen Kurenaido', sans-serif;
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+    color: lightslategray;
+}
+
+section {
+    margin: 2rem 0;
+}
+
+a {
+    color: #447f88;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #754488;
+}
+
+li {
+    list-style-type: '- ';
+}
+
+section>ul>Ul {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 799px) {
+    ul {
+        padding-left: 1rem;
+    }
+
+    ul>ul {
+        padding-left: 1rem;
+    }
+}
+
+code {
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+header,
+main,
+footer {
+    width: 80%;
+    margin: 0 auto;
+}
+
+@media (max-width: 799px) {
+
+    header,
+    main,
+    footer {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+header {
+    height: 50px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header>div {
+    margin-top: auto;
+}
+
+main {
+    padding: 10px 0;
+    flex-grow: 1;
+}
+
+footer {
+    color: #888888;
+    margin: 40px auto 20px;
+}
+
+footer>div {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer a {
+    color: #447f88;
+    text-decoration: none;
+}
+
+footer a:visited {
+    color: #754488;
+}
+
+@media (max-width: 799px) {
+    footer {
+        margin-top: 20px;
+    }
+
+    footer>div {
+        width: 100%;
+        margin: 0 auto;
+        flex-direction: column;
+    }
+
+    footer div.footer-item {
+        margin: 0 auto;
+    }
+}
+
+/*
+    help window
+    information policy window
+*/
+span.help-button,
+span.help-close {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+div.help-close-outer {
+    width: 100%;
+    text-align: right;
+}
+
+div.help-window {
+    display: none;
+}
+
+div.help-window.active {
+    display: block;
+    background-color: #ffffff;
+    opacity: 0.95;
+    width: fit-content;
+    height: fit-content;
+    max-width: 80%;
+    max-height: 80%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    padding: 0.5rem 2rem 2rem 2rem;
+    box-shadow: 0px 0px 5px 1px #999;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+div.help-window a {
+    color: #447f88;
+}
+
+div.help-window a:visited {
+    color: #754488;
+}
+
+span.material-symbols-outlined:hover {
+    font-variation-settings:
+        'FILL' 1
+}
+
+span.material-symbols-outlined.help-close:hover {
+    color: #ffffff;
+    background-color: #444444;
+}
+
+a>img {
+    height: 40px;
+}
+
+span.key {
+    color: #888888;
+    font-weight: 700;
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+div.links {
+    margin: 20px 0;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+@media (max-width: 799px) {
+    div.links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.links>div {
+        margin: 0 auto;
+    }
+}
