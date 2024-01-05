@@ -4,12 +4,16 @@
 // This software is licensed under the MIT License.
 // https://github.com/taidalog/taidalog.github.io/blob/main/LICENSE
 
+namespace TaidalogsPortfolio
+
 open Browser.Dom
 open Browser.Types
 open Fable.Core
 open Fable.Core.JsInterop
+open SnowFlake
 
 module App =
+
     let keyboardshortcut (e: KeyboardEvent) =
         let informationPolicyWindow = document.getElementById "informationPolicyWindow"
 
@@ -37,5 +41,18 @@ module App =
                 fun _ -> (document.getElementById "informationPolicyWindow").classList.remove "active"
 
             // keyboard shortcut
-            document.onkeydown <- fun (e: KeyboardEvent) -> keyboardshortcut e)
+            document.onkeydown <- fun (e: KeyboardEvent) -> keyboardshortcut e
+
+            (document.getElementById "snowArea")
+                .setAttribute ("width", string window.innerWidth)
+
+            (document.getElementById "snowArea")
+                .setAttribute ("height", string window.innerHeight)
+            // snow falling
+            fall 0.
+            fall 1.
+            fall 2.
+            fall 4.
+            fall 8.
+            fall 16.)
     )
