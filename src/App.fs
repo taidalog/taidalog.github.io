@@ -44,10 +44,10 @@ module App =
             document.onkeydown <- fun (e: KeyboardEvent) -> keyboardshortcut e
 
             (document.getElementById "snowArea")
-                .setAttribute ("width", string window.innerWidth)
+                .setAttribute ("width", string document.body.clientWidth)
 
             (document.getElementById "snowArea")
-                .setAttribute ("height", string window.innerHeight)
+                .setAttribute ("height", string document.body.clientHeight)
             // snow falling
             fall 0.
             fall 1.
