@@ -56,21 +56,31 @@ module App =
             fall 8.
             fall 16.
 
-            (document.getElementById "umbrella").onclick <-
-                fun e ->
-                    (document.getElementById "umbrella").classList.toggle ("dispaly-none") |> ignore
-                    (document.getElementById "snowing").classList.toggle ("dispaly-none") |> ignore
 
-                    document.getElementsByClassName "snow-flake"
-                    |> fun x -> JS.Constructors.Array?from(x)
-                    |> Array.iter (fun (x: Element) -> x.classList.add "display-none")
-
-            (document.getElementById "snowing").onclick <-
-                fun e ->
-                    (document.getElementById "snowing").classList.toggle ("dispaly-none") |> ignore
-                    (document.getElementById "umbrella").classList.toggle ("dispaly-none") |> ignore
-
-                    document.getElementsByClassName "snow-flake"
-                    |> fun x -> JS.Constructors.Array?from(x)
-                    |> Array.iter (fun (x: Element) -> x.classList.remove "display-none"))
+        // (document.getElementById "umbrella").onclick <-
+        //     fun e ->
+        //         (document.getElementById "umbrella").classList.toggle ("dispaly-none") |> ignore
+        //         (document.getElementById "snowing").classList.toggle ("dispaly-none") |> ignore
+        //
+        //         document.getElementsByClassName "snow-flake"
+        //         |> fun x -> JS.Constructors.Array?from(x)
+        //         |> Array.iter (fun (x: Element) -> x.classList.add "display-none")
+        //
+        // (document.getElementById "snowing").onclick <-
+        //     fun e ->
+        //         (document.getElementById "snowing").classList.toggle ("dispaly-none") |> ignore
+        //         (document.getElementById "umbrella").classList.toggle ("dispaly-none") |> ignore
+        //
+        //         document.getElementsByClassName "snow-flake"
+        //         |> fun x -> JS.Constructors.Array?from(x)
+        //         |> Array.iter (fun (x: Element) -> x.classList.remove "display-none")
+        )
     )
+
+    window.onresize <-
+        fun _ ->
+            (document.getElementById "snowArea")
+                .setAttribute ("width", string document.body.clientWidth)
+
+            (document.getElementById "snowArea")
+                .setAttribute ("height", string document.body.clientHeight)
