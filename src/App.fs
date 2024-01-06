@@ -54,5 +54,23 @@ module App =
             fall 2.
             fall 4.
             fall 8.
-            fall 16.)
+            fall 16.
+
+            (document.getElementById "umbrella").onclick <-
+                fun e ->
+                    (document.getElementById "umbrella").classList.toggle ("dispaly-none") |> ignore
+                    (document.getElementById "snowing").classList.toggle ("dispaly-none") |> ignore
+
+                    document.getElementsByClassName "snow-flake"
+                    |> fun x -> JS.Constructors.Array?from(x)
+                    |> Array.iter (fun (x: Element) -> x.classList.add "display-none")
+
+            (document.getElementById "snowing").onclick <-
+                fun e ->
+                    (document.getElementById "snowing").classList.toggle ("dispaly-none") |> ignore
+                    (document.getElementById "umbrella").classList.toggle ("dispaly-none") |> ignore
+
+                    document.getElementsByClassName "snow-flake"
+                    |> fun x -> JS.Constructors.Array?from(x)
+                    |> Array.iter (fun (x: Element) -> x.classList.remove "display-none"))
     )

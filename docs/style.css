@@ -243,3 +243,13 @@ svg.snow-area>text.italic {
     font-family: 'Merriweather', serif;
     font-style: italic;
 }
+
+span.umbrella,
+span.snowing {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+span.dispaly-none {
+    display: none;
+}

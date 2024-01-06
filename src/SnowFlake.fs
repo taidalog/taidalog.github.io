@@ -45,6 +45,7 @@ module SnowFlake =
         text.setAttribute ("x", string snowFlake.StartPoint.X)
         text.setAttribute ("y", string snowFlake.StartPoint.Y)
         text.setAttribute ("font-size", sprintf "%dpx" snowFlake.FontSize)
+        text.classList.add "snow-flake"
         text.textContent <- "*"
         let animate1 = document.createElementNS ("http://www.w3.org/2000/svg", "animate")
         animate1.setAttribute ("attributeName", "x")
