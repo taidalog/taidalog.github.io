@@ -92,8 +92,11 @@ module SnowFlake =
 
         let fontSize = randBetween 40 120 |> int
 
+        let fill =
+            List.item (int (randBetween 0 5)) [ "#cccccc"; "#83d2df"; "#8de2f0"; "#83dfcd"; "#83b0df"; "#9683df" ]
+
         let snowFlake =
-            create' { X = startX; Y = startY } { X = stopX; Y = stopY } "#aaccff" fontSize
+            create' { X = startX; Y = startY } { X = stopX; Y = stopY } fill fontSize
 
         let snowFlakeSvg = toElement snowFlake acc
         snowArea.appendChild (snowFlakeSvg) |> ignore
