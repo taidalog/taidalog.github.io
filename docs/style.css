@@ -231,4 +231,5 @@ svg.snow-area {
     top: 0;
     left: 0;
     z-index: -1;
+    animation-timing-function: ease-in-out;
 }
