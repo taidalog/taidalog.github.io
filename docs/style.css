@@ -233,3 +233,7 @@ svg.snow-area {
     z-index: -1;
     animation-timing-function: ease-in-out;
 }
+
+svg.snow-area>text {
+    user-select: none;
+}
