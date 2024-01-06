@@ -90,7 +90,7 @@ module SnowFlake =
         let stopX = startX + ((randBetween 0 20) - 10.)
         let stopY = randBetween 200 (int (snowArea.getBoundingClientRect().height))
 
-        let fontSize = randBetween 40 120 |> int
+        let fontSize = randBetween 20 120 |> int
 
         let fill =
             List.item (int (randBetween 0 5)) [ "#cccccc"; "#83d2df"; "#8de2f0"; "#83dfcd"; "#83b0df"; "#9683df" ]
