@@ -1,5 +1,5 @@
 <!--
-  taidalog's portfolio Version 0.1.1
+  taidalog's portfolio Version 0.2.0
   https://github.com/taidalog/taidalog.github.io
   Copyright (c) 2023 taidalog
   This software is licensed under the MIT License.
@@ -45,9 +45,9 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@taidalog">
     <!-- stylesheet -->
-    <link rel="stylesheet" href="style.css?v=0.1.1">
+    <link rel="stylesheet" href="style.css?v=0.2.0">
     <!-- script -->
-    <script type="text/javascript" src="bundle.js?v=0.1.1"></script>
+    <script type="text/javascript" src="bundle.js?v=0.2.0"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +58,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&text=*display=swap" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2NDYJX0HD"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -67,12 +69,21 @@
 
         gtag('config', 'G-Q2NDYJX0HD');
     </script>
+    -->
 </head>
 
 <body>
     <header>
         <div>
             <h1 translate="no">taidalog's portfolio</h1>
+        </div>
+        <div>
+            <span id="umbrella" class="material-symbols-outlined umbrella" translate="no">
+                umbrella
+            </span>
+            <span id="snowing" class="material-symbols-outlined snowing display-none" translate="no">
+                cloudy_snowing
+            </span>
         </div>
     </header>
 
@@ -219,11 +230,16 @@
 
     </main>
 
+    <section>
+        <?xml version="1.0" standalone="no"?>
+        <svg id="snowArea" class="snow-area" width="" height="" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
+    </section>
+
     <footer>
         <div>
             <div class="footer-item" translate="no"><small>&copy; 2023 taidalog</small></div>
             <div class="footer-item" translate="no"><small>
-                    <a href="https://github.com/taidalog/releases">Version 0.1.1</a></small></div>
+                    <a href="https://github.com/taidalog/releases">Version 0.2.0</a></small></div>
             <div class="footer-item"><small><a href="#" id="informationPolicyLink">情報の外部送信について</a></small></div>
             <div class="footer-item" translate="no"><small>
                     <a href="https://github.com/taidalog/">Repository on GitHub</a></small></div>

@@ -1,5 +1,5 @@
 /*
-  taidalog's portfolio Version 0.1.1
+  taidalog's portfolio Version 0.2.0
   https://github.com/taidalog/taidalog.github.io
   Copyright (c) 2023 taidalog
   This software is licensed under the MIT License.
@@ -224,4 +224,49 @@ div.links {
     div.links>div {
         margin: 0 auto;
     }
+}
+
+svg.snow-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation-timing-function: ease-in-out;
+}
+
+svg.snow-area>text {
+    user-select: none;
+    font-family: 'Merriweather', serif;
+}
+
+svg.snow-area>text.italic {
+    font-family: 'Merriweather', serif;
+    font-style: italic;
+}
+
+span.umbrella,
+span.snowing {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+span.display-none {
+    display: none;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+text.snow-flake.fading-out {
+    animation-name: fade-out;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
