@@ -70,47 +70,6 @@ module SnowFlake =
         text.appendChild (animate3) |> ignore
         text
 
-    let toElement' (snowFlake: SnowFlake) (begin': float) : string =
-        let ani1 =
-            sprintf
-                """<animate attributeName="%s" calcMode="%s" values="%s" dur="%fs" begin="%fs" fill="freeze" />"""
-                "x"
-                "linear"
-                (sprintf "%f;%f" snowFlake.StartPoint.X snowFlake.StopPoint.X)
-                snowFlake.Duration
-                begin'
-
-        let ani2 =
-            sprintf
-                """<animate attributeName="%s" calcMode="%s" values="%s" dur="%fs" begin="%fs" fill="freeze" />"""
-                "y"
-                "linear"
-                (sprintf "%f;%f" snowFlake.StartPoint.Y snowFlake.StopPoint.Y)
-                snowFlake.Duration
-                begin'
-
-        let ani3 =
-            sprintf
-                """<animate attributeName="%s" calcMode="%s" values="%s" dur="%fs" begin="%fs" fill="freeze" />"""
-                "opacity"
-                "linear"
-                "1;0"
-                snowFlake.Duration
-                begin'
-
-        let text =
-            sprintf
-                """<text x="%f" y="%f" stroke="none" font-family="Noto Sans JP" font-size="%dpx" fill="%s">*%s%s%s</text>"""
-                snowFlake.StartPoint.X
-                snowFlake.StartPoint.Y
-                snowFlake.FontSize
-                snowFlake.Fill
-                ani1
-                ani2
-                ani3
-
-        text
-
     [<Emit("setTimeout($0, $1)")>]
     let setTimeout (functionRef: unit -> unit) (delay: int) : int = jsNative
 
