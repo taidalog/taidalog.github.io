@@ -236,4 +236,10 @@ svg.snow-area {
 
 svg.snow-area>text {
     user-select: none;
+    font-family: 'Merriweather', serif;
+}
+
+svg.snow-area>text.italic {
+    font-family: 'Merriweather', serif;
+    font-style: italic;
 }

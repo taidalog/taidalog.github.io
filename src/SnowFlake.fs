@@ -45,7 +45,6 @@ module SnowFlake =
         text.setAttribute ("x", string snowFlake.StartPoint.X)
         text.setAttribute ("y", string snowFlake.StartPoint.Y)
         text.setAttribute ("font-size", sprintf "%dpx" snowFlake.FontSize)
-        text.setAttribute ("font-family", "Noto Sans JP")
         text.textContent <- "*"
         let animate1 = document.createElementNS ("http://www.w3.org/2000/svg", "animate")
         animate1.setAttribute ("attributeName", "x")
@@ -99,6 +98,10 @@ module SnowFlake =
             create' { X = startX; Y = startY } { X = stopX; Y = stopY } fill fontSize
 
         let snowFlakeSvg = toElement snowFlake acc
+
+        if randBetween 0 9 < 4. then
+            snowFlakeSvg.classList.add ("italic")
+
         snowArea.appendChild (snowFlakeSvg) |> ignore
 
         setTimeout
