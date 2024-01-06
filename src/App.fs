@@ -48,33 +48,23 @@ module App =
 
             (document.getElementById "snowArea")
                 .setAttribute ("height", string document.body.clientHeight)
+
+            let timeDOMLoaded = System.DateTime.Now
+
             // snow falling
-            fall 0.
-            fall 1.
-            fall 2.
-            fall 4.
-            fall 8.
-            fall 16.
+            [ 0..17 ] |> List.iter (fun _ -> fall timeDOMLoaded false)
 
+            (document.getElementById "umbrella").onclick <-
+                fun _ ->
+                    (document.getElementById "umbrella").classList.toggle ("display-none") |> ignore
+                    (document.getElementById "snowing").classList.toggle ("display-none") |> ignore
 
-        // (document.getElementById "umbrella").onclick <-
-        //     fun e ->
-        //         (document.getElementById "umbrella").classList.toggle ("dispaly-none") |> ignore
-        //         (document.getElementById "snowing").classList.toggle ("dispaly-none") |> ignore
-        //
-        //         document.getElementsByClassName "snow-flake"
-        //         |> fun x -> JS.Constructors.Array?from(x)
-        //         |> Array.iter (fun (x: Element) -> x.classList.add "display-none")
-        //
-        // (document.getElementById "snowing").onclick <-
-        //     fun e ->
-        //         (document.getElementById "snowing").classList.toggle ("dispaly-none") |> ignore
-        //         (document.getElementById "umbrella").classList.toggle ("dispaly-none") |> ignore
-        //
-        //         document.getElementsByClassName "snow-flake"
-        //         |> fun x -> JS.Constructors.Array?from(x)
-        //         |> Array.iter (fun (x: Element) -> x.classList.remove "display-none")
-        )
+            (document.getElementById "snowing").onclick <-
+                fun _ ->
+                    (document.getElementById "snowing").classList.toggle ("display-none") |> ignore
+                    (document.getElementById "umbrella").classList.toggle ("display-none") |> ignore
+
+                    [ 0..17 ] |> List.iter (fun _ -> fall timeDOMLoaded false))
     )
 
     window.onresize <-

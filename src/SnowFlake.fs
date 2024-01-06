@@ -81,7 +81,7 @@ module SnowFlake =
         let rand = System.Random()
         rand.Next(min, max) |> float
 
-    let rec fall acc : unit =
+    let rec fall (timeDOMLoaded: System.DateTime) (cease: bool) : unit =
         let snowArea = document.getElementById "snowArea"
 
         let startX = randBetween 20 (int (snowArea.getBoundingClientRect().width - 20.))
@@ -98,7 +98,8 @@ module SnowFlake =
         let snowFlake =
             create' { X = startX; Y = startY } { X = stopX; Y = stopY } fill fontSize
 
-        let snowFlakeSvg = toElement snowFlake acc
+        let snowFlakeSvg =
+            toElement snowFlake ((System.DateTime.Now - timeDOMLoaded).TotalSeconds |> float)
 
         if randBetween 0 9 < 4. then
             snowFlakeSvg.classList.add ("italic")
@@ -108,6 +109,17 @@ module SnowFlake =
         setTimeout
             (fun _ ->
                 snowArea.removeChild (snowFlakeSvg) |> ignore
-                fall (acc + snowFlake.Duration))
+
+                let shouldStop =
+                    (document.getElementById "umbrella").classList.contains "display-none"
+
+                printfn "should stop snow: %b" shouldStop
+
+                if shouldStop then
+                    printfn "stopping snow."
+                    ()
+                else
+                    printfn "falling snow."
+                    fall timeDOMLoaded shouldStop)
             (int (snowFlake.Duration * 1000.))
         |> ignore
