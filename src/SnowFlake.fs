@@ -108,7 +108,7 @@ module SnowFlake =
 
         setTimeout
             (fun _ ->
-                snowArea.removeChild (snowFlakeSvg) |> ignore
+                snowArea.removeChild snowFlakeSvg |> ignore
 
                 let shouldStop =
                     (document.getElementById "umbrella").classList.contains "display-none"

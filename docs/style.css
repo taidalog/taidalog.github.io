@@ -253,3 +253,20 @@ span.snowing {
 span.display-none {
     display: none;
 }
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+text.snow-flake.fading-out {
+    animation-name: fade-out;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}

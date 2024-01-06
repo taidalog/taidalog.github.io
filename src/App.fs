@@ -56,13 +56,27 @@ module App =
 
             (document.getElementById "umbrella").onclick <-
                 fun _ ->
-                    (document.getElementById "umbrella").classList.toggle ("display-none") |> ignore
-                    (document.getElementById "snowing").classList.toggle ("display-none") |> ignore
+                    (document.getElementById "umbrella").classList.toggle "display-none" |> ignore
+                    (document.getElementById "snowing").classList.toggle "display-none" |> ignore
+
+                    let snowFlakeElements: Element array =
+                        document.getElementsByClassName "snow-flake"
+                        |> fun x -> JS.Constructors.Array?from(x)
+
+                    snowFlakeElements
+                    |> Array.iter (fun x -> x.classList.add "fading-out" |> ignore)
+
+                    setTimeout
+                        (fun _ ->
+                            snowFlakeElements
+                            |> Array.iter (fun x -> x.parentElement.removeChild x |> ignore))
+                        3000
+                    |> ignore
 
             (document.getElementById "snowing").onclick <-
                 fun _ ->
-                    (document.getElementById "snowing").classList.toggle ("display-none") |> ignore
-                    (document.getElementById "umbrella").classList.toggle ("display-none") |> ignore
+                    (document.getElementById "snowing").classList.toggle "display-none" |> ignore
+                    (document.getElementById "umbrella").classList.toggle "display-none" |> ignore
 
                     [ 0..17 ] |> List.iter (fun _ -> fall timeDOMLoaded false))
     )
