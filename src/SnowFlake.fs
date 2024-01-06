@@ -28,9 +28,12 @@ module SnowFlake =
           FontSize = fontSize }
 
     let create' (startPoint: Point) (stopPoint: Point) (fill: string) (fontSize: int) : SnowFlake =
+        let velocityFactor = float fontSize / 40.
+
         let duration =
             sqrt (pown (startPoint.X - stopPoint.X) 2 + pown (startPoint.Y - stopPoint.Y) 2)
             / 10.
+            / velocityFactor
 
         create startPoint stopPoint fill fontSize duration
 
