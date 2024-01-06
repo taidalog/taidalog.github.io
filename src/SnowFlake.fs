@@ -84,11 +84,17 @@ module SnowFlake =
     let rec fall (timeDOMLoaded: System.DateTime) (cease: bool) : unit =
         let snowArea = document.getElementById "snowArea"
 
-        let startX = randBetween 20 (int (snowArea.getBoundingClientRect().width - 20.))
-        let startY = randBetween 20 100
+        let startX =
+            randBetween 0 (int (snowArea.getBoundingClientRect().width + 20. - 10.))
 
-        let stopX = startX + ((randBetween 0 20) - 10.)
-        let stopY = randBetween 200 (int (snowArea.getBoundingClientRect().height))
+        let startY = randBetween 0 100
+
+        let stopX = startX + ((randBetween 0 100) - 50.)
+
+        let stopY =
+            randBetween
+                (int (snowArea.getBoundingClientRect().height / 2.))
+                (int (snowArea.getBoundingClientRect().height))
 
         let fontSize = randBetween 20 120 |> int
 
@@ -121,5 +127,5 @@ module SnowFlake =
                 else
                     printfn "falling snow."
                     fall timeDOMLoaded shouldStop)
-            (int (snowFlake.Duration * 1000.))
+            (int (snowFlake.Duration * 1.1 * 1000.))
         |> ignore
