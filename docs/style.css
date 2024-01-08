@@ -270,3 +270,37 @@ text.snow-flake.fading-out {
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
 }
+
+section.skills {
+    display: grid;
+    gap: 20px;
+}
+
+div.skill-container {
+    display: grid;
+    grid-template:
+        'skill-logo skill-name' 1.75rem
+        'skill-logo skill-note' auto /
+        100px auto;
+}
+
+div.skill-logo {
+    grid-area: skill-logo;
+    height: 90px;
+}
+
+div.skill-name {
+    grid-area: skill-name;
+    color: #666666;
+    font-weight: 700;
+}
+
+div.skill-note {
+    grid-area: skill-note;
+}
+
+div.skill-logo>img {
+    width: 60px;
+    display: block;
+    margin: 0 auto;
+}
