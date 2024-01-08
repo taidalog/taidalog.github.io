@@ -54,10 +54,13 @@ module App =
             // snow falling
             [ 0..17 ] |> List.iter (fun _ -> fall timeDOMLoaded false)
 
-            (document.getElementById "umbrella").onclick <-
+            (document.getElementById "umbrellaFolded").onclick <-
                 fun _ ->
-                    (document.getElementById "umbrella").classList.toggle "display-none" |> ignore
-                    (document.getElementById "snowing").classList.toggle "display-none" |> ignore
+                    (document.getElementById "umbrellaFolded").classList.toggle "display-none"
+                    |> ignore
+
+                    (document.getElementById "umbrellaOpen").classList.toggle "display-none"
+                    |> ignore
 
                     let snowFlakeElements: Element array =
                         document.getElementsByClassName "snow-flake"
@@ -73,10 +76,13 @@ module App =
                         3000
                     |> ignore
 
-            (document.getElementById "snowing").onclick <-
+            (document.getElementById "umbrellaOpen").onclick <-
                 fun _ ->
-                    (document.getElementById "snowing").classList.toggle "display-none" |> ignore
-                    (document.getElementById "umbrella").classList.toggle "display-none" |> ignore
+                    (document.getElementById "umbrellaOpen").classList.toggle "display-none"
+                    |> ignore
+
+                    (document.getElementById "umbrellaFolded").classList.toggle "display-none"
+                    |> ignore
 
                     [ 0..17 ] |> List.iter (fun _ -> fall timeDOMLoaded false))
     )

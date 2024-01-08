@@ -236,21 +236,23 @@ svg.snow-area {
 
 svg.snow-area>text {
     user-select: none;
-    font-family: 'Merriweather', serif;
+    font-family: 'Kaisei Tokumin', serif;
 }
 
 svg.snow-area>text.italic {
-    font-family: 'Merriweather', serif;
+    font-family: 'Kaisei Tokumin', serif;
     font-style: italic;
 }
 
-span.umbrella,
+span.umbrella-folded,
+img.umbrella-open:hover,
 span.snowing {
     font-size: 24px;
     cursor: pointer;
 }
 
-span.display-none {
+span.display-none,
+img.display-none {
     display: none;
 }
 
