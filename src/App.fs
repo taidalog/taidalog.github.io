@@ -47,7 +47,7 @@ module App =
                 .setAttribute ("width", string document.body.clientWidth)
 
             (document.getElementById "snowArea")
-                .setAttribute ("height", string document.body.clientHeight)
+                .setAttribute ("height", string document.body.scrollHeight)
 
             let timeDOMLoaded = System.DateTime.Now
 
@@ -87,4 +87,4 @@ module App =
                 .setAttribute ("width", string document.body.clientWidth)
 
             (document.getElementById "snowArea")
-                .setAttribute ("height", string document.body.clientHeight)
+                .setAttribute ("height", string document.body.scrollHeight)
