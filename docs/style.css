@@ -273,7 +273,8 @@ text.snow-flake.fading-out {
     animation-fill-mode: forwards;
 }
 
-section.skills {
+section.skills,
+section.works {
     display: grid;
     gap: 20px;
 }
@@ -305,4 +306,28 @@ div.skill-logo>img {
     width: 60px;
     display: block;
     margin: 0 auto;
+}
+
+div.work-container {
+    display: grid;
+    grid-template:
+        'work-name' 1.75rem
+        'work-url' 1.75rem
+        'work-note' auto /
+        auto;
+}
+
+
+div.work-name {
+    grid-area: work-name;
+    color: #666666;
+    font-weight: 700;
+}
+
+div.work-url {
+    grid-area: work-url;
+}
+
+div.work-note {
+    grid-area: work-note;
 }
