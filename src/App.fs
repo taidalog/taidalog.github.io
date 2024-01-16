@@ -43,16 +43,14 @@ module App =
             // keyboard shortcut
             document.onkeydown <- fun (e: KeyboardEvent) -> keyboardshortcut e
 
-            (document.getElementById "snowArea")
+            (document.getElementById "snowSection")
                 .setAttribute ("width", string document.body.clientWidth)
 
-            (document.getElementById "snowArea")
+            (document.getElementById "snowSection")
                 .setAttribute ("height", string document.body.scrollHeight)
 
-            let timeDOMLoaded = System.DateTime.Now
-
             // snow falling
-            [ 0..17 ] |> List.iter (fun _ -> fall timeDOMLoaded false)
+            [ 0..17 ] |> List.iter (fun _ -> fall false)
 
             (document.getElementById "umbrellaFolded").onclick <-
                 fun _ ->
@@ -84,13 +82,13 @@ module App =
                     (document.getElementById "umbrellaFolded").classList.toggle "display-none"
                     |> ignore
 
-                    [ 0..17 ] |> List.iter (fun _ -> fall timeDOMLoaded false))
+                    [ 0..17 ] |> List.iter (fun _ -> fall false))
     )
 
     window.onresize <-
         fun _ ->
-            (document.getElementById "snowArea")
+            (document.getElementById "snowSection")
                 .setAttribute ("width", string document.body.clientWidth)
 
-            (document.getElementById "snowArea")
+            (document.getElementById "snowSection")
                 .setAttribute ("height", string document.body.scrollHeight)
