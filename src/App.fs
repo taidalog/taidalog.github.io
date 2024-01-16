@@ -1,6 +1,6 @@
-// taidalog's portfolio Version 0.2.0
+// taidalog's portfolio Version 0.2.1
 // https://github.com/taidalog/taidalog.github.io
-// Copyright (c) 2023 taidalog
+// Copyright (c) 2023-2024 taidalog
 // This software is licensed under the MIT License.
 // https://github.com/taidalog/taidalog.github.io/blob/main/LICENSE
 
@@ -43,21 +43,22 @@ module App =
             // keyboard shortcut
             document.onkeydown <- fun (e: KeyboardEvent) -> keyboardshortcut e
 
-            (document.getElementById "snowArea")
+            (document.getElementById "snowSection")
                 .setAttribute ("width", string document.body.clientWidth)
 
-            (document.getElementById "snowArea")
-                .setAttribute ("height", string document.body.clientHeight)
-
-            let timeDOMLoaded = System.DateTime.Now
+            (document.getElementById "snowSection")
+                .setAttribute ("height", string document.body.scrollHeight)
 
             // snow falling
-            [ 0..17 ] |> List.iter (fun _ -> fall timeDOMLoaded false)
+            [ 0..17 ] |> List.iter (fun _ -> fall false)
 
-            (document.getElementById "umbrella").onclick <-
+            (document.getElementById "umbrellaFolded").onclick <-
                 fun _ ->
-                    (document.getElementById "umbrella").classList.toggle "display-none" |> ignore
-                    (document.getElementById "snowing").classList.toggle "display-none" |> ignore
+                    (document.getElementById "umbrellaFolded").classList.toggle "display-none"
+                    |> ignore
+
+                    (document.getElementById "umbrellaOpen").classList.toggle "display-none"
+                    |> ignore
 
                     let snowFlakeElements: Element array =
                         document.getElementsByClassName "snow-flake"
@@ -73,18 +74,21 @@ module App =
                         3000
                     |> ignore
 
-            (document.getElementById "snowing").onclick <-
+            (document.getElementById "umbrellaOpen").onclick <-
                 fun _ ->
-                    (document.getElementById "snowing").classList.toggle "display-none" |> ignore
-                    (document.getElementById "umbrella").classList.toggle "display-none" |> ignore
+                    (document.getElementById "umbrellaOpen").classList.toggle "display-none"
+                    |> ignore
 
-                    [ 0..17 ] |> List.iter (fun _ -> fall timeDOMLoaded false))
+                    (document.getElementById "umbrellaFolded").classList.toggle "display-none"
+                    |> ignore
+
+                    [ 0..17 ] |> List.iter (fun _ -> fall false))
     )
 
     window.onresize <-
         fun _ ->
-            (document.getElementById "snowArea")
+            (document.getElementById "snowSection")
                 .setAttribute ("width", string document.body.clientWidth)
 
-            (document.getElementById "snowArea")
-                .setAttribute ("height", string document.body.clientHeight)
+            (document.getElementById "snowSection")
+                .setAttribute ("height", string document.body.scrollHeight)

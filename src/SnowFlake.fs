@@ -1,6 +1,6 @@
-// taidalog's portfolio Version 0.2.0
+// taidalog's portfolio Version 0.2.1
 // https://github.com/taidalog/taidalog.github.io
-// Copyright (c) 2023 taidalog
+// Copyright (c) 2023-2024 taidalog
 // This software is licensed under the MIT License.
 // https://github.com/taidalog/taidalog.github.io/blob/main/LICENSE
 
@@ -37,7 +37,12 @@ module SnowFlake =
 
         create startPoint stopPoint fill fontSize duration
 
-    let toElement (snowFlake: SnowFlake) (begin': float) : Element =
+    let toElement (snowFlake: SnowFlake) : Element =
+        let svg = document.createElementNS ("http://www.w3.org/2000/svg", "svg")
+        svg.classList.add "snow-svg"
+        svg.setAttribute ("width", string document.body.clientWidth)
+        svg.setAttribute ("height", string document.body.scrollHeight)
+
         let text = document.createElementNS ("http://www.w3.org/2000/svg", "text")
         text.setAttribute ("fill", snowFlake.Fill)
         text.setAttribute ("stroke", "none")
@@ -47,29 +52,30 @@ module SnowFlake =
         text.setAttribute ("font-size", sprintf "%dpx" snowFlake.FontSize)
         text.classList.add "snow-flake"
         text.textContent <- "*"
+
         let animate1 = document.createElementNS ("http://www.w3.org/2000/svg", "animate")
         animate1.setAttribute ("attributeName", "x")
         animate1.setAttribute ("values", sprintf "%f;%f" snowFlake.StartPoint.X snowFlake.StopPoint.X)
         animate1.setAttribute ("dur", sprintf "%fs" snowFlake.Duration)
-        animate1.setAttribute ("begin", sprintf "%fs" begin')
         animate1.setAttribute ("fill", "freeze")
+
         let animate2 = document.createElementNS ("http://www.w3.org/2000/svg", "animate")
         animate2.setAttribute ("attributeName", "y")
         animate2.setAttribute ("values", sprintf "%f;%f" snowFlake.StartPoint.Y snowFlake.StopPoint.Y)
         animate2.setAttribute ("dur", sprintf "%fs" snowFlake.Duration)
-        animate2.setAttribute ("begin", sprintf "%fs" begin')
         animate2.setAttribute ("fill", "freeze")
+
         let animate3 = document.createElementNS ("http://www.w3.org/2000/svg", "animate")
         animate3.setAttribute ("attributeName", "opacity")
         animate3.setAttribute ("values", "0;1;0")
         animate3.setAttribute ("dur", sprintf "%fs" snowFlake.Duration)
-        animate3.setAttribute ("begin", sprintf "%fs" begin')
         animate3.setAttribute ("fill", "freeze")
 
-        text.appendChild (animate1) |> ignore
-        text.appendChild (animate2) |> ignore
-        text.appendChild (animate3) |> ignore
-        text
+        text.appendChild animate1 |> ignore
+        text.appendChild animate2 |> ignore
+        text.appendChild animate3 |> ignore
+        svg.appendChild text |> ignore
+        svg
 
     [<Emit("setTimeout($0, $1)")>]
     let setTimeout (functionRef: unit -> unit) (delay: int) : int = jsNative
@@ -81,20 +87,17 @@ module SnowFlake =
         let rand = System.Random()
         rand.Next(min, max) |> float
 
-    let rec fall (timeDOMLoaded: System.DateTime) (cease: bool) : unit =
-        let snowArea = document.getElementById "snowArea"
+    let rec fall (cease: bool) : unit =
+        let snowSection = document.getElementById "snowSection"
 
-        let startX =
-            randBetween 0 (int (snowArea.getBoundingClientRect().width + 20. - 10.))
+        let startX = randBetween 0 (int (document.body.clientWidth + 20. - 10.))
 
         let startY = randBetween 0 100
 
         let stopX = startX + ((randBetween 0 100) - 50.)
 
         let stopY =
-            randBetween
-                (int (snowArea.getBoundingClientRect().height / 2.))
-                (int (snowArea.getBoundingClientRect().height))
+            randBetween (int (document.body.scrollHeight / 2.)) (int (document.body.scrollHeight))
 
         let fontSize = randBetween 20 120 |> int
 
@@ -104,20 +107,19 @@ module SnowFlake =
         let snowFlake =
             create' { X = startX; Y = startY } { X = stopX; Y = stopY } fill fontSize
 
-        let snowFlakeSvg =
-            toElement snowFlake ((System.DateTime.Now - timeDOMLoaded).TotalSeconds |> float)
+        let snowFlakeSvg = toElement snowFlake
 
         if randBetween 0 9 < 4. then
             snowFlakeSvg.classList.add ("italic")
 
-        snowArea.appendChild (snowFlakeSvg) |> ignore
+        snowSection.appendChild snowFlakeSvg |> ignore
 
         setTimeout
             (fun _ ->
-                snowArea.removeChild snowFlakeSvg |> ignore
+                snowSection.removeChild snowFlakeSvg |> ignore
 
                 let shouldStop =
-                    (document.getElementById "umbrella").classList.contains "display-none"
+                    (document.getElementById "umbrellaFolded").classList.contains "display-none"
 
                 printfn "should stop snow: %b" shouldStop
 
@@ -126,6 +128,6 @@ module SnowFlake =
                     ()
                 else
                     printfn "falling snow."
-                    fall timeDOMLoaded shouldStop)
+                    fall shouldStop)
             (int (snowFlake.Duration * 1.1 * 1000.))
         |> ignore

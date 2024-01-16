@@ -1,7 +1,7 @@
 /*
-  taidalog's portfolio Version 0.2.0
+  taidalog's portfolio Version 0.2.1
   https://github.com/taidalog/taidalog.github.io
-  Copyright (c) 2023 taidalog
+  Copyright (c) 2023-2024 taidalog
   This software is licensed under the MIT License.
   https://github.com/taidalog/taidalog.github.io/blob/main/LICENSE
 */
@@ -226,7 +226,7 @@ div.links {
     }
 }
 
-svg.snow-area {
+svg.snow-svg {
     position: absolute;
     top: 0;
     left: 0;
@@ -234,23 +234,25 @@ svg.snow-area {
     animation-timing-function: ease-in-out;
 }
 
-svg.snow-area>text {
+svg.snow-svg>text {
     user-select: none;
-    font-family: 'Merriweather', serif;
+    font-family: 'Kaisei Tokumin', serif;
 }
 
-svg.snow-area>text.italic {
-    font-family: 'Merriweather', serif;
+svg.snow-svg>text.italic {
+    font-family: 'Kaisei Tokumin', serif;
     font-style: italic;
 }
 
-span.umbrella,
+span.umbrella-folded,
+img.umbrella-open:hover,
 span.snowing {
     font-size: 24px;
     cursor: pointer;
 }
 
-span.display-none {
+span.display-none,
+img.display-none {
     display: none;
 }
 
@@ -269,4 +271,63 @@ text.snow-flake.fading-out {
     animation-duration: 3s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
+}
+
+section.skills,
+section.works {
+    display: grid;
+    gap: 20px;
+}
+
+div.skill-container {
+    display: grid;
+    grid-template:
+        'skill-logo skill-name' 1.75rem
+        'skill-logo skill-note' auto /
+        100px auto;
+}
+
+div.skill-logo {
+    grid-area: skill-logo;
+    height: 90px;
+}
+
+div.skill-name {
+    grid-area: skill-name;
+    color: #666666;
+    font-weight: 700;
+}
+
+div.skill-note {
+    grid-area: skill-note;
+}
+
+div.skill-logo>img {
+    width: 60px;
+    display: block;
+    margin: 0 auto;
+}
+
+div.work-container {
+    display: grid;
+    grid-template:
+        'work-name' 1.75rem
+        'work-url' 1.75rem
+        'work-note' auto /
+        auto;
+}
+
+
+div.work-name {
+    grid-area: work-name;
+    color: #666666;
+    font-weight: 700;
+}
+
+div.work-url {
+    grid-area: work-url;
+}
+
+div.work-note {
+    grid-area: work-note;
 }
