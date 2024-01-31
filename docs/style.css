@@ -317,7 +317,7 @@ div.work-container {
     display: grid;
     grid-template:
         'work-name' 1.75rem
-        'work-url' 1.75rem
+        'work-url' auto
         'work-note' auto /
         auto;
 }
