@@ -1,4 +1,4 @@
-// taidalog's portfolio Version 0.2.1
+// taidalog's portfolio Version 0.2.2
 // https://github.com/taidalog/taidalog.github.io
 // Copyright (c) 2023-2024 taidalog
 // This software is licensed under the MIT License.
@@ -87,8 +87,15 @@ module App =
 
     window.onresize <-
         fun _ ->
-            (document.getElementById "snowSection")
-                .setAttribute ("width", string document.body.clientWidth)
+            let snowSection = document.getElementById "snowSection"
+            snowSection.setAttribute ("width", string document.body.clientWidth)
+            snowSection.setAttribute ("height", string document.body.scrollHeight)
 
-            (document.getElementById "snowSection")
-                .setAttribute ("height", string document.body.scrollHeight)
+            let snowSvgs: Element array =
+                snowSection.getElementsByClassName "snow-svg"
+                |> fun x -> JS.Constructors.Array?from(x)
+
+            snowSvgs
+            |> Array.iter (fun x ->
+                x.setAttribute ("width", string document.body.clientWidth)
+                x.setAttribute ("height", string document.body.scrollHeight))
