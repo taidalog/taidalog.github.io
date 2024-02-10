@@ -186,6 +186,10 @@ div.help-window.active {
     scrollbar-width: thin;
 }
 
+div.help-window h2 {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
 div.help-window a {
     color: #447f88;
 }
