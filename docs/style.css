@@ -318,6 +318,27 @@ div.skill-logo>img {
     margin: 0 auto;
 }
 
+@media (max-width: 799px) {
+    div.skill-container {
+        grid-template:
+            'skill-logo' auto
+            'skill-name' 1.75rem
+            'skill-note' auto /
+            auto;
+    }
+
+    div.skill-logo {
+        height: 60px;
+    }
+
+    div.skill-logo>img {
+        height: 60px;
+        width: auto;
+        margin: 0;
+        margin-right: auto;
+    }
+}
+
 div.work-container {
     margin-bottom: 20px;
     display: grid;
