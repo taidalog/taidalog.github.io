@@ -288,8 +288,24 @@ section.works {
 }
 */
 
+section.skills>div,
+section.works>div {
+    display: grid;
+    gap: 20px;
+}
+
+@media (max-width: 799px) {
+
+    section.skills>div {
+        gap: 60px;
+    }
+
+    section.works>div {
+        gap: 40px;
+    }
+}
+
 div.skill-container {
-    margin-bottom: 20px;
     display: grid;
     grid-template:
         'skill-logo skill-name' 1.75rem
@@ -320,7 +336,6 @@ div.skill-logo>img {
 
 @media (max-width: 799px) {
     div.skill-container {
-        margin-bottom: 60px;
         grid-template:
             'skill-logo' auto
             'skill-name' 1.75rem
@@ -341,19 +356,12 @@ div.skill-logo>img {
 }
 
 div.work-container {
-    margin-bottom: 20px;
     display: grid;
     grid-template:
         'work-name' 1.75rem
         'work-url' auto
         'work-note' auto /
         auto;
-}
-
-@media (max-width: 799px) {
-    div.work-container {
-        margin-bottom: 40px;
-    }
 }
 
 div.work-name {
