@@ -1,4 +1,4 @@
-// taidalog's portfolio Version 0.4.0
+// taidalog's portfolio Version 0.4.1
 // https://github.com/taidalog/taidalog.github.io
 // Copyright (c) 2023-2024 taidalog
 // This software is licensed under the MIT License.
