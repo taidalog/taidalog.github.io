@@ -258,6 +258,7 @@ span.material-symbols-outlined.help-close:hover {
     background-color: var(--text-color);
 }
 
+a>picture>img,
 a>img {
     height: 40px;
 }
@@ -303,14 +304,14 @@ svg.snow-svg>text.italic {
 }
 
 span.umbrella-folded,
-img.umbrella-open:hover,
+picture.umbrella-open:hover,
 span.snowing {
     font-size: 24px;
     cursor: pointer;
 }
 
 span.display-none,
-img.display-none {
+picture.display-none {
     display: none;
 }
 
@@ -367,6 +368,7 @@ div.skill-note {
     grid-area: skill-note;
 }
 
+div.skill-logo>picture>img,
 div.skill-logo>img {
     width: 60px;
     display: block;
