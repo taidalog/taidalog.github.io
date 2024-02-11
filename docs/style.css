@@ -25,7 +25,7 @@
     --help-window-box-shadow: #999999;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
     :root {
         --background-color: #142022;
         --text-color: #ffffff;
