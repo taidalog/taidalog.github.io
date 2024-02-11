@@ -306,17 +306,13 @@ section.works {
 section.skills>div,
 section.works>div {
     display: grid;
-    gap: 20px;
+    gap: 40px;
 }
 
 @media (max-width: 799px) {
 
     section.skills>div {
         gap: 60px;
-    }
-
-    section.works>div {
-        gap: 40px;
     }
 }
 
