@@ -57,9 +57,11 @@ li {
     list-style-type: '- ';
 }
 
+/*
 section>ul>Ul {
     margin-bottom: 1rem;
 }
+*/
 
 @media (max-width: 799px) {
     ul {
