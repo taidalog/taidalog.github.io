@@ -38,7 +38,7 @@ h2 {
     color: lightslategray;
 }
 
-section {
+main>section {
     margin: 2rem 0;
     width: 100%;
 }
