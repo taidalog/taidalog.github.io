@@ -1,5 +1,5 @@
 <!--
-  taidalog's portfolio Version 0.3.0
+  taidalog's portfolio Version 0.4.0
   https://github.com/taidalog/taidalog.github.io
   Copyright (c) 2023-2024 taidalog
   This software is licensed under the MIT License.
@@ -45,9 +45,9 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@taidalog">
     <!-- stylesheet -->
-    <link rel="stylesheet" href="style.css?v=0.3.0">
+    <link rel="stylesheet" href="style.css?v=0.4.0">
     <!-- script -->
-    <script type="text/javascript" src="bundle.js?v=0.3.0"></script>
+    <script type="text/javascript" src="bundle.js?v=0.4.0"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,8 +90,10 @@
                     cloudy_snowing
                 </span>
             -->
-            <img id="umbrellaOpen" class="umbrella-open display-none" src="image/umbrella-open.svg" width="24px"
-                title="傘をたたむ">
+            <picture id="umbrellaOpen" class="umbrella-open display-none">
+                <source media="(prefers-color-scheme: dark)" srcset="image/umbrella-open-white.svg">
+                <img src="image/umbrella-open.svg" width="24px" alt="傘をたたむ" title="傘をたたむ">
+            </picture>
         </div>
     </header>
 
@@ -157,7 +159,10 @@
 
                 <div class="skill-container">
                     <div class="skill-logo">
-                        <img src="image/logos/vba.svg" title="VBA">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="image/logos/vba-white.svg">
+                            <img src="image/logos/vba.svg" alt="VBA" title="VBA">
+                        </picture>
                     </div>
                     <div class="skill-name">VBA</div>
                     <div class="skill-note">
@@ -167,7 +172,10 @@
 
                 <div class="skill-container">
                     <div class="skill-logo">
-                        <img src="image/logos/gas.svg" title="GAS">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="image/logos/gas-white.svg">
+                            <img src="image/logos/gas.svg" alt="GAS" title="GAS">
+                        </picture>
                     </div>
                     <div class="skill-name">GAS</div>
                     <div class="skill-note">
@@ -228,7 +236,10 @@
 
                 <div class="skill-container">
                     <div class="skill-logo">
-                        <img src="image/logos/regex.svg" title="正規表現">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="image/logos/regex-white.svg">
+                            <img src="image/logos/regex.svg" alt="正規表現" title="正規表現">
+                        </picture>
                     </div>
                     <div class="skill-name">正規表現</div>
                     <div class="skill-note">
@@ -252,7 +263,10 @@
 
                 <div class="skill-container">
                     <div class="skill-logo">
-                        <img src="image/logos/github-mark.svg" title="GitHub">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="image/logos/github-mark-white.svg">
+                            <img src="image/logos/github-mark.svg" alt="GitHub" title="GitHub">
+                        </picture>
                     </div>
                     <div class="skill-name">
                         GitHub</div>
@@ -381,24 +395,45 @@
             <div class="links">
 
                 <div>
-                    <a href="https://taidalog.hatenablog.com" alt="hatena blog"><img
-                            src="image/logos/hatenablog-logotype.svg" title="hatena blog"></a>
+                    <a href="https://taidalog.hatenablog.com" alt="hatena blog">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)"
+                                srcset="image/logos/hatenablog-logotype-white.svg">
+                            <img src="image/logos/hatenablog-logotype.svg" alt="GitHub" title="GitHub">
+                        </picture>
+                    </a>
                 </div>
+
                 <div>
-                    <a href="https://twitter.com/taidalog" alt="Twitter"><img src="image/logos/x-black.png"
-                            title="Twitter"></a>
+                    <a href="https://twitter.com/taidalog" alt="Twitter">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="image/logos/x-white.svg">
+                            <img src="image/logos/x-black.png" alt="Twitter" title="Twitter">
+                        </picture>
+                    </a>
                 </div>
+
                 <div>
                     <a href="https://www.instagram.com/taidalog/" alt="Instagram"><img
                             src="image/logos/Instagram_Glyph_Gradient.png" title="Instagram"></a>
                 </div>
+
                 <div>
-                    <a href="https://github.com/taidalog" alt="GitHub"><img src="image/logos/github-mark.svg"
-                            title="GitHub"></a>
+                    <a href="https://github.com/taidalog" alt="GitHub">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="image/logos/github-mark-white.svg">
+                            <img src="image/logos/github-mark.svg" alt="GutHub" title="GutHub">
+                        </picture>
+                    </a>
                 </div>
+
                 <div>
-                    <a href="https://www.nuget.org/profiles/taidalog" alt="NuGet"><img src="image/logos/nuget.svg"
-                            title="NuGet"></a>
+                    <a href="https://www.nuget.org/profiles/taidalog" alt="NuGet">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="image/logos/nuget_512_mono_w.png">
+                            <img src="image/logos/nuget.svg" alt="NuGet" title="NuGet">
+                        </picture>
+                    </a>
                 </div>
 
             </div>
@@ -461,10 +496,10 @@
         <div>
             <div class="footer-item" translate="no"><small>&copy; 2023-2024 taidalog</small></div>
             <div class="footer-item" translate="no"><small>
-                    <a href="https://github.com/taidalog/releases">Version 0.3.0</a></small></div>
+                    <a href="https://github.com/taidalog/taidalog.github.io/releases">Version 0.4.0</a></small></div>
             <div class="footer-item"><small><a href="#" id="informationPolicyLink">情報の外部送信について</a></small></div>
             <div class="footer-item" translate="no"><small>
-                    <a href="https://github.com/taidalog/">Repository on GitHub</a></small></div>
+                    <a href="https://github.com/taidalog/taidalog.github.io">Repository on GitHub</a></small></div>
             <div class="footer-item"><small>Powered by <a id="footerFSharp" href="https://fsharp.org/"
                         translate="no">F#</a>
                     and <a id="footerFable" href="https://fable.io" translate="no">Fable</a>.

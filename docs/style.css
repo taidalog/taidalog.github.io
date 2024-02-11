@@ -1,10 +1,50 @@
 /*
-  taidalog's portfolio Version 0.3.0
+  taidalog's portfolio Version 0.4.0
   https://github.com/taidalog/taidalog.github.io
   Copyright (c) 2023-2024 taidalog
   This software is licensed under the MIT License.
   https://github.com/taidalog/taidalog.github.io/blob/main/LICENSE
 */
+:root {
+    --background-color: #ffffff;
+    --text-color: #444444;
+    /* 9.74, AAA */
+    --h1-color: #65a2ac;
+    /* 2.87, ! */
+    --h2-color: #778899;
+    /* 3.64, AA */
+    --name-color: #666666;
+    /* 5.74, AA */
+    --pale-color: #888888;
+    /* 3.54, ! */
+    --a-color: #447f88;
+    /* 4.53, AA */
+    --a-visited-color: #754488;
+    /* 7.15, AAA */
+    --help-window-background-color: var(--background-color);
+    --help-window-box-shadow: #999999;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #142022;
+        --text-color: #ffffff;
+        /* 16.67, AAA */
+        --h1-color: #65a2ac;
+        /* 5.81, AAA */
+        --h2-color: #a6bed6;
+        /* 8.70, AAA */
+        --name-color: #999999;
+        /* 5.85, AA */
+        --pale-color: #888888;
+        /* 4.70, AA */
+        --a-color: #58a5b0;
+        /* 5.89, AA */
+        --a-visited-color: #bb6cd9;
+        /* 4.97, AA */
+    }
+}
+
 html,
 body {
     height: 100%;
@@ -14,7 +54,9 @@ body {
 html {
     font-family: 'Zen Kaku Gothic New', sans-serif;
     font-weight: 400;
-    color: #444444;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: 0.5s;
 }
 
 body {
@@ -24,9 +66,9 @@ body {
 }
 
 h1 {
-    color: #65a2ac;
+    color: var(--h1-color);
     font-family: 'Zen Kurenaido', sans-serif;
-    font-size: 2.25rem;
+    font-size: 2rem;
     margin: 0;
 }
 
@@ -35,7 +77,7 @@ h2 {
     font-size: 2rem;
     font-weight: 300;
     margin: 0;
-    color: lightslategray;
+    color: var(--h2-color);
 }
 
 main>section {
@@ -43,13 +85,13 @@ main>section {
 }
 
 a {
-    color: #447f88;
+    color: var(--a-color);
     text-decoration: none;
     word-break: break-all;
 }
 
 a:visited {
-    color: #754488;
+    color: var(--a-visited-color);
 }
 
 section>div>ul,
@@ -118,7 +160,7 @@ main {
 }
 
 footer {
-    color: #888888;
+    color: var(--pale-color);
     margin: 40px auto 20px;
 }
 
@@ -130,12 +172,12 @@ footer>div {
 }
 
 footer a {
-    color: #447f88;
+    color: var(--a-color);
     text-decoration: none;
 }
 
 footer a:visited {
-    color: #754488;
+    color: var(--a-visited-color);
 }
 
 @media (max-width: 799px) {
@@ -175,7 +217,7 @@ div.help-window {
 
 div.help-window.active {
     display: block;
-    background-color: #ffffff;
+    background-color: var(--help-window-background-color);
     opacity: 0.95;
     width: fit-content;
     height: fit-content;
@@ -189,7 +231,7 @@ div.help-window.active {
     right: 0;
     margin: auto;
     padding: 0.5rem 2rem 2rem 2rem;
-    box-shadow: 0px 0px 5px 1px #999;
+    box-shadow: 0px 0px 5px 1px var(--help-window-box-shadow);
     overflow-y: auto;
     scrollbar-width: thin;
 }
@@ -199,11 +241,11 @@ div.help-window h2 {
 }
 
 div.help-window a {
-    color: #447f88;
+    color: var(--a-color);
 }
 
 div.help-window a:visited {
-    color: #754488;
+    color: var(--a-visited-color);
 }
 
 span.material-symbols-outlined:hover {
@@ -212,16 +254,17 @@ span.material-symbols-outlined:hover {
 }
 
 span.material-symbols-outlined.help-close:hover {
-    color: #ffffff;
-    background-color: #444444;
+    color: var(--background-color);
+    background-color: var(--text-color);
 }
 
+a>picture>img,
 a>img {
     height: 40px;
 }
 
 span.key {
-    color: #888888;
+    color: var(--pale-color);
 }
 
 div.links {
@@ -261,14 +304,14 @@ svg.snow-svg>text.italic {
 }
 
 span.umbrella-folded,
-img.umbrella-open:hover,
+picture.umbrella-open:hover,
 span.snowing {
     font-size: 24px;
     cursor: pointer;
 }
 
 span.display-none,
-img.display-none {
+picture.display-none {
     display: none;
 }
 
@@ -317,7 +360,7 @@ div.skill-logo {
 
 div.skill-name {
     grid-area: skill-name;
-    color: #666666;
+    color: var(--name-color);
     font-weight: 700;
 }
 
@@ -325,6 +368,7 @@ div.skill-note {
     grid-area: skill-note;
 }
 
+div.skill-logo>picture>img,
 div.skill-logo>img {
     width: 60px;
     display: block;
@@ -363,7 +407,7 @@ div.work-container {
 
 div.work-name {
     grid-area: work-name;
-    color: #666666;
+    color: var(--name-color);
     font-weight: 700;
 }
 
