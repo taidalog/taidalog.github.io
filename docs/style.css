@@ -5,6 +5,19 @@
   This software is licensed under the MIT License.
   https://github.com/taidalog/taidalog.github.io/blob/main/LICENSE
 */
+:root {
+    --background-color: #ffffff;
+    --text-color: #444444;
+    --h1-color: #65a2ac;
+    --h2-color: #778899;
+    --name-color: #666666;
+    --pale-color: #888888;
+    --a-color: #447f88;
+    --a-visited-color: #754488;
+    --help-window-background-color: #ffffff;
+    --help-window-box-shadow: #999999;
+}
+
 html,
 body {
     height: 100%;
@@ -14,7 +27,8 @@ body {
 html {
     font-family: 'Zen Kaku Gothic New', sans-serif;
     font-weight: 400;
-    color: #444444;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 body {
@@ -24,7 +38,7 @@ body {
 }
 
 h1 {
-    color: #65a2ac;
+    color: var(--h1-color);
     font-family: 'Zen Kurenaido', sans-serif;
     font-size: 2.25rem;
     margin: 0;
@@ -35,7 +49,7 @@ h2 {
     font-size: 2rem;
     font-weight: 300;
     margin: 0;
-    color: lightslategray;
+    color: var(--h2-color);
 }
 
 main>section {
@@ -43,13 +57,13 @@ main>section {
 }
 
 a {
-    color: #447f88;
+    color: var(--a-color);
     text-decoration: none;
     word-break: break-all;
 }
 
 a:visited {
-    color: #754488;
+    color: var(--a-visited-color);
 }
 
 section>div>ul,
@@ -118,7 +132,7 @@ main {
 }
 
 footer {
-    color: #888888;
+    color: var(--pale-color);
     margin: 40px auto 20px;
 }
 
@@ -130,12 +144,12 @@ footer>div {
 }
 
 footer a {
-    color: #447f88;
+    color: var(--a-color);
     text-decoration: none;
 }
 
 footer a:visited {
-    color: #754488;
+    color: var(--a-visited-color);
 }
 
 @media (max-width: 799px) {
@@ -175,7 +189,7 @@ div.help-window {
 
 div.help-window.active {
     display: block;
-    background-color: #ffffff;
+    background-color: var(--help-window-background-color);
     opacity: 0.95;
     width: fit-content;
     height: fit-content;
@@ -189,7 +203,7 @@ div.help-window.active {
     right: 0;
     margin: auto;
     padding: 0.5rem 2rem 2rem 2rem;
-    box-shadow: 0px 0px 5px 1px #999;
+    box-shadow: 0px 0px 5px 1px var(--help-window-box-shadow);
     overflow-y: auto;
     scrollbar-width: thin;
 }
@@ -199,11 +213,11 @@ div.help-window h2 {
 }
 
 div.help-window a {
-    color: #447f88;
+    color: var(--a-color);
 }
 
 div.help-window a:visited {
-    color: #754488;
+    color: var(--a-visited-color);
 }
 
 span.material-symbols-outlined:hover {
@@ -212,8 +226,8 @@ span.material-symbols-outlined:hover {
 }
 
 span.material-symbols-outlined.help-close:hover {
-    color: #ffffff;
-    background-color: #444444;
+    color: var(--background-color);
+    background-color: var(--text-color);
 }
 
 a>img {
@@ -221,7 +235,7 @@ a>img {
 }
 
 span.key {
-    color: #888888;
+    color: var(--pale-color);
 }
 
 div.links {
@@ -317,7 +331,7 @@ div.skill-logo {
 
 div.skill-name {
     grid-area: skill-name;
-    color: #666666;
+    color: var(--name-color);
     font-weight: 700;
 }
 
@@ -363,7 +377,7 @@ div.work-container {
 
 div.work-name {
     grid-area: work-name;
-    color: #666666;
+    color: var(--name-color);
     font-weight: 700;
 }
 
