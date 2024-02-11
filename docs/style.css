@@ -21,7 +21,7 @@
     /* 4.53, AA */
     --a-visited-color: #754488;
     /* 7.15, AAA */
-    --help-window-background-color: #ffffff;
+    --help-window-background-color: var(--background-color);
     --help-window-box-shadow: #999999;
 }
 
@@ -42,8 +42,6 @@
         /* 5.89, AA */
         --a-visited-color: #bb6cd9;
         /* 4.97, AA */
-        --help-window-background-color: #ffffff;
-        --help-window-box-shadow: #999999;
     }
 }
 
