@@ -388,6 +388,7 @@ div.skill-logo>img {
         height: 60px;
     }
 
+    div.skill-logo>picture>img,
     div.skill-logo>img {
         height: 60px;
         width: auto;
