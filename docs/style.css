@@ -320,6 +320,7 @@ div.skill-logo>img {
 
 @media (max-width: 799px) {
     div.skill-container {
+        margin-bottom: 60px;
         grid-template:
             'skill-logo' auto
             'skill-name' 1.75rem
@@ -349,6 +350,11 @@ div.work-container {
         auto;
 }
 
+@media (max-width: 799px) {
+    div.work-container {
+        margin-bottom: 40px;
+    }
+}
 
 div.work-name {
     grid-area: work-name;
