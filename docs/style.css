@@ -39,7 +39,7 @@ h2 {
 }
 
 main>section {
-    margin: 2rem 0;
+    /*margin: 2rem 0;*/
     width: 100%;
 }
 
@@ -118,7 +118,10 @@ header>div {
 
 main {
     padding: 10px 0;
+    margin: 40px auto;
     flex-grow: 1;
+    display: grid;
+    gap: 5rem;
 }
 
 footer {
