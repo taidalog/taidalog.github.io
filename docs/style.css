@@ -23,6 +23,12 @@
     /* 7.15, AAA */
     --help-window-background-color: var(--background-color);
     --help-window-box-shadow: #999999;
+    --snowflake-0: #83b0df;
+    --snowflake-1: #83d2df;
+    --snowflake-2: #8de2f0;
+    --snowflake-3: #8fa8a4;
+    --snowflake-4: #9683df;
+    --snowflake-5: #cccccc;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,6 +38,8 @@
         /* 16.67, AAA */
         --h1-color: #65a2ac;
         /* 5.81, AAA */
+        --h2-color: #8fa8a4;
+        /* 6.59, AAA */
         --h2-color: #a6bed6;
         /* 8.70, AAA */
         --name-color: #999999;
@@ -301,6 +309,30 @@ svg.snow-svg>text {
 svg.snow-svg>text.italic {
     font-family: 'Kaisei Tokumin', serif;
     font-style: italic;
+}
+
+svg.snow-svg>text.snowflake-color-0 {
+    fill: var(--snowflake-0);
+}
+
+svg.snow-svg>text.snowflake-color-1 {
+    fill: var(--snowflake-1);
+}
+
+svg.snow-svg>text.snowflake-color-2 {
+    fill: var(--snowflake-2);
+}
+
+svg.snow-svg>text.snowflake-color-3 {
+    fill: var(--snowflake-3);
+}
+
+svg.snow-svg>text.snowflake-color-4 {
+    fill: var(--snowflake-4);
+}
+
+svg.snow-svg>text.snowflake-color-5 {
+    fill: var(--snowflake-5);
 }
 
 span.umbrella-folded,
