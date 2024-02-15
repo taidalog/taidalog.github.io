@@ -1,5 +1,5 @@
 /*
-  taidalog's portfolio Version 0.4.1
+  taidalog's portfolio Version 0.4.2
   https://github.com/taidalog/taidalog.github.io
   Copyright (c) 2023-2024 taidalog
   This software is licensed under the MIT License.
@@ -23,6 +23,18 @@
     /* 7.15, AAA */
     --help-window-background-color: var(--background-color);
     --help-window-box-shadow: #999999;
+    --snowflake-0: #83b0df;
+    /* 2.27, ! */
+    --snowflake-1: #83d2df;
+    /* 1.71, ! */
+    --snowflake-2: #8de2f0;
+    /* 1.47, ! */
+    --snowflake-3: #8fa8a4;
+    /* 2.52, ! */
+    --snowflake-4: #9683df;
+    /* 3.17, ! */
+    --snowflake-5: #cccccc;
+    /* 1.60, ! */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,6 +44,8 @@
         /* 16.67, AAA */
         --h1-color: #65a2ac;
         /* 5.81, AAA */
+        --h2-color: #8fa8a4;
+        /* 6.59, AAA */
         --h2-color: #a6bed6;
         /* 8.70, AAA */
         --name-color: #999999;
@@ -42,6 +56,18 @@
         /* 5.89, AA */
         --a-visited-color: #bb6cd9;
         /* 4.97, AA */
+        --snowflake-0: #24578F;
+        /* 2.25, ! */
+        --snowflake-1: #154C51;
+        /* 1.73, ! */
+        --snowflake-2: #093F49;
+        /* 1.44, ! */
+        --snowflake-3: #4B625D;
+        /* 2.54, ! */
+        --snowflake-4: #7158D5;
+        /* 3.22, ! */
+        --snowflake-5: #404040;
+        /* 1.60, ! */
     }
 }
 
@@ -303,7 +329,32 @@ svg.snow-svg>text.italic {
     font-style: italic;
 }
 
+svg.snow-svg>text.snowflake-color-0 {
+    fill: var(--snowflake-0);
+}
+
+svg.snow-svg>text.snowflake-color-1 {
+    fill: var(--snowflake-1);
+}
+
+svg.snow-svg>text.snowflake-color-2 {
+    fill: var(--snowflake-2);
+}
+
+svg.snow-svg>text.snowflake-color-3 {
+    fill: var(--snowflake-3);
+}
+
+svg.snow-svg>text.snowflake-color-4 {
+    fill: var(--snowflake-4);
+}
+
+svg.snow-svg>text.snowflake-color-5 {
+    fill: var(--snowflake-5);
+}
+
 span.umbrella-folded,
+picture.umbrella-folded,
 picture.umbrella-open:hover,
 span.snowing {
     font-size: 24px;

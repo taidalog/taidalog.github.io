@@ -1,5 +1,5 @@
 <!--
-  taidalog's portfolio Version 0.4.1
+  taidalog's portfolio Version 0.4.2
   https://github.com/taidalog/taidalog.github.io
   Copyright (c) 2023-2024 taidalog
   This software is licensed under the MIT License.
@@ -45,9 +45,9 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@taidalog">
     <!-- stylesheet -->
-    <link rel="stylesheet" href="style.css?v=0.4.1">
+    <link rel="stylesheet" href="style.css?v=0.4.2">
     <!-- script -->
-    <script type="text/javascript" src="bundle.js?v=0.4.1"></script>
+    <script type="text/javascript" src="bundle.js?v=0.4.2"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,17 +82,21 @@
             <h1 translate="no">taidalog's portfolio</h1>
         </div>
         <div>
+            <!--
             <span id="umbrellaFolded" class="material-symbols-outlined umbrella-folded" translate="no" title="傘を差す">
                 umbrella
             </span>
-            <!--
                 <span id="snowing" class="material-symbols-outlined snowing display-none" translate="no">
                     cloudy_snowing
                 </span>
             -->
-            <picture id="umbrellaOpen" class="umbrella-open display-none">
+            <picture id="umbrellaOpen" class="umbrella-open">
                 <source media="(prefers-color-scheme: dark)" srcset="image/umbrella-open-white.svg">
-                <img src="image/umbrella-open.svg" width="24px" alt="傘をたたむ" title="傘をたたむ">
+                <img src="image/umbrella-open.svg" width="24px" alt="傘を差す" title="傘を差す">
+            </picture>
+            <picture id="umbrellaFolded" class="umbrella-folded display-none">
+                <source media="(prefers-color-scheme: dark)" srcset="image/umbrella-folded-white.svg">
+                <img src="image/umbrella-folded.svg" width="24px" alt="傘をたたむ" title="傘をたたむ">
             </picture>
         </div>
     </header>
@@ -496,7 +500,7 @@
         <div>
             <div class="footer-item" translate="no"><small>&copy; 2023-2024 taidalog</small></div>
             <div class="footer-item" translate="no"><small>
-                    <a href="https://github.com/taidalog/taidalog.github.io/releases">Version 0.4.1</a></small></div>
+                    <a href="https://github.com/taidalog/taidalog.github.io/releases">Version 0.4.2</a></small></div>
             <div class="footer-item"><small><a href="#" id="informationPolicyLink">情報の外部送信について</a></small></div>
             <div class="footer-item" translate="no"><small>
                     <a href="https://github.com/taidalog/taidalog.github.io">Repository on GitHub</a></small></div>

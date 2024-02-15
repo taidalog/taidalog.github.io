@@ -1,4 +1,4 @@
-// taidalog's portfolio Version 0.4.1
+// taidalog's portfolio Version 0.4.2
 // https://github.com/taidalog/taidalog.github.io
 // Copyright (c) 2023-2024 taidalog
 // This software is licensed under the MIT License.
@@ -44,13 +44,14 @@ module SnowFlake =
         svg.setAttribute ("height", string document.body.scrollHeight)
 
         let text = document.createElementNS ("http://www.w3.org/2000/svg", "text")
-        text.setAttribute ("fill", snowFlake.Fill)
+        //text.setAttribute ("fill", snowFlake.Fill)
         text.setAttribute ("stroke", "none")
         text.setAttribute ("opacity", "0")
         text.setAttribute ("x", string snowFlake.StartPoint.X)
         text.setAttribute ("y", string snowFlake.StartPoint.Y)
         text.setAttribute ("font-size", sprintf "%dpx" snowFlake.FontSize)
         text.classList.add "snow-flake"
+        text.classList.add snowFlake.Fill
         text.textContent <- "*"
 
         let animate1 = document.createElementNS ("http://www.w3.org/2000/svg", "animate")
@@ -102,7 +103,14 @@ module SnowFlake =
         let fontSize = randBetween 20 120 |> int
 
         let fill =
-            List.item (int (randBetween 0 5)) [ "#cccccc"; "#83d2df"; "#8de2f0"; "#83dfcd"; "#83b0df"; "#9683df" ]
+            List.item
+                (int (randBetween 0 5))
+                [ "snowflake-color-0"
+                  "snowflake-color-1"
+                  "snowflake-color-2"
+                  "snowflake-color-3"
+                  "snowflake-color-4"
+                  "snowflake-color-5" ]
 
         let snowFlake =
             create' { X = startX; Y = startY } { X = stopX; Y = stopY } fill fontSize
@@ -119,7 +127,7 @@ module SnowFlake =
                 snowSection.removeChild snowFlakeSvg |> ignore
 
                 let shouldStop =
-                    (document.getElementById "umbrellaFolded").classList.contains "display-none"
+                    (document.getElementById "umbrellaOpen").classList.contains "display-none"
 
                 printfn "should stop snow: %b" shouldStop
 
