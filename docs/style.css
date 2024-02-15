@@ -24,14 +24,20 @@
     --help-window-background-color: var(--background-color);
     --help-window-box-shadow: #999999;
     --snowflake-0: #83b0df;
+    /* 2.27, ! */
     --snowflake-1: #83d2df;
+    /* 1.71, ! */
     --snowflake-2: #8de2f0;
+    /* 1.47, ! */
     --snowflake-3: #8fa8a4;
+    /* 2.52, ! */
     --snowflake-4: #9683df;
+    /* 3.17, ! */
     --snowflake-5: #cccccc;
+    /* 1.60, ! */
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
     :root {
         --background-color: #142022;
         --text-color: #ffffff;
@@ -50,6 +56,18 @@
         /* 5.89, AA */
         --a-visited-color: #bb6cd9;
         /* 4.97, AA */
+        --snowflake-0: #24578F;
+        /* 2.25, ! */
+        --snowflake-1: #154C51;
+        /* 1.73, ! */
+        --snowflake-2: #093F49;
+        /* 1.44, ! */
+        --snowflake-3: #4B625D;
+        /* 2.54, ! */
+        --snowflake-4: #7158D5;
+        /* 3.22, ! */
+        --snowflake-5: #404040;
+        /* 1.60, ! */
     }
 }
 
