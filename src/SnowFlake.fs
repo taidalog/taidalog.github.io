@@ -127,7 +127,7 @@ module SnowFlake =
                 snowSection.removeChild snowFlakeSvg |> ignore
 
                 let shouldStop =
-                    (document.getElementById "umbrellaFolded").classList.contains "display-none"
+                    (document.getElementById "umbrellaOpen").classList.contains "display-none"
 
                 printfn "should stop snow: %b" shouldStop
 
