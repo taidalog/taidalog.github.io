@@ -195,11 +195,11 @@ footer>div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 footer div.footer-item {
-    margin: 0 auto;
+    margin: 0 0.75em;
 }
 
 footer a {
@@ -220,6 +220,10 @@ footer a:visited {
         width: 100%;
         margin: 0 auto;
         flex-direction: column;
+    }
+
+    footer div.footer-item {
+        margin: 0 auto;
     }
 }
 
