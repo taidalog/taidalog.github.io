@@ -131,7 +131,7 @@ section>div {
 }
 
 li {
-    list-style-type: '- ';
+    list-style-type: none;
 }
 
 @media (max-width: 799px) {
