@@ -354,8 +354,7 @@ svg.snow-svg>text.snowflake-color-5 {
 }
 
 picture.umbrella-folded,
-picture.umbrella-open:hover,
-span.snowing {
+picture.umbrella-open:hover {
     cursor: pointer;
 }
 
