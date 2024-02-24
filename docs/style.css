@@ -241,6 +241,7 @@ div.help-window.active,
 input.popup-check:checked~div.popup-window {
     display: block;
     background-color: var(--help-window-background-color);
+    border-radius: 10px;
     opacity: 0.95;
     width: fit-content;
     height: fit-content;
@@ -253,7 +254,7 @@ input.popup-check:checked~div.popup-window {
     bottom: 0;
     right: 0;
     margin: auto;
-    padding: 0.5rem 2rem 2rem 2rem;
+    padding: 0 2rem 2rem 2rem;
     box-shadow: 0px 0px 5px 1px var(--help-window-box-shadow);
     overflow-y: auto;
     scrollbar-width: thin;
