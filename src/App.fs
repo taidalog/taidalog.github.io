@@ -15,6 +15,7 @@ open SnowFlake
 module App =
 
     let keyboardshortcut (e: KeyboardEvent) =
+        let popupCheck = document.getElementById "popupCheck" :?> HTMLInputElement
         let informationPolicyWindow = document.getElementById "informationPolicyWindow"
 
         let isInformationPolicyWindowActive =
@@ -26,6 +27,9 @@ module App =
         | "Escape" ->
             if isInformationPolicyWindowActive then
                 informationPolicyWindow.classList.remove "active"
+
+            if popupCheck.checked then
+                popupCheck.checked <- false
         | _ -> ()
 
     window.addEventListener (
