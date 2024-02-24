@@ -304,14 +304,15 @@ span.key {
 
 div.links {
     margin: 20px 0;
-    display: grid;
+    display: flex;
     gap: 20px;
-    grid-template-columns: auto auto auto auto auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 @media (max-width: 799px) {
     div.links {
-        display: flex;
+        justify-content: center;
         flex-direction: column;
     }
 
