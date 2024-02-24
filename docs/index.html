@@ -103,9 +103,25 @@
             <div>
                 <ul>
                     <li><span class="key">name:</span> taidalog</li>
-                    <li><span class="key">age:</span> <span title="任意の桁数の整数">[0-9]+</span></li>
+                    <li><span class="key">age:</span> <label class="popup-label" for="popupCheck"><span
+                                title="任意の桁数の整数">[0-9]+</span></label></li>
                     <li><span class="key">location:</span> Earth</li>
                 </ul>
+            </div>
+
+            <input id="popupCheck" class="popup-check" type="checkbox" tabindex="-1" autocomplete="off">
+            <div class="popup-window">
+                <div>
+                    <label for="popupCheck">
+                        <span class="material-symbols-outlined help-close" translate="no">
+                            close
+                        </span>
+                    </label>
+                </div>
+                <p>これは正規表現というものです。<br>
+                    <c>[0-9]</c>は0から9のいずれか一文字を表し、<br>
+                    <c>+</c>はその直前の要素が1回以上連続することを表します。<br>全体として「任意の桁数の整数」を表します。
+                </p>
             </div>
 
         </section>
