@@ -299,6 +299,11 @@ div.links {
     justify-content: space-between;
 }
 
+div.licenses {
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width: 799px) {
     div.links {
         justify-content: center;
@@ -307,6 +312,11 @@ div.links {
 
     div.links>div {
         margin: 0 auto;
+    }
+
+    div.licenses>small {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
