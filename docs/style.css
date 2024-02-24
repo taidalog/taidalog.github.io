@@ -171,7 +171,6 @@ header>div {
 }
 
 main {
-    padding: 10px 0;
     margin: 40px auto;
     flex-grow: 1;
     display: grid;
@@ -211,7 +210,6 @@ footer a:visited {
 
     footer>div {
         width: 100%;
-        margin: 0 auto;
         flex-direction: column;
     }
 
