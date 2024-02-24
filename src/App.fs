@@ -1,4 +1,4 @@
-// taidalog's portfolio Version 0.4.2
+// taidalog's portfolio Version 1.0.0
 // https://github.com/taidalog/taidalog.github.io
 // Copyright (c) 2023-2024 taidalog
 // This software is licensed under the MIT License.
@@ -15,6 +15,7 @@ open SnowFlake
 module App =
 
     let keyboardshortcut (e: KeyboardEvent) =
+        let popupCheck = document.getElementById "popupCheck" :?> HTMLInputElement
         let informationPolicyWindow = document.getElementById "informationPolicyWindow"
 
         let isInformationPolicyWindowActive =
@@ -26,6 +27,9 @@ module App =
         | "Escape" ->
             if isInformationPolicyWindowActive then
                 informationPolicyWindow.classList.remove "active"
+
+            if popupCheck.checked then
+                popupCheck.checked <- false
         | _ -> ()
 
     window.addEventListener (

@@ -1,5 +1,5 @@
 /*
-  taidalog's portfolio Version 0.4.2
+  taidalog's portfolio Version 1.0.0
   https://github.com/taidalog/taidalog.github.io
   Copyright (c) 2023-2024 taidalog
   This software is licensed under the MIT License.
@@ -116,6 +116,10 @@ a {
     word-break: break-all;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 a:visited {
     color: var(--a-visited-color);
 }
@@ -131,7 +135,7 @@ section>div {
 }
 
 li {
-    list-style-type: '- ';
+    list-style-type: none;
 }
 
 @media (max-width: 799px) {
@@ -151,18 +155,7 @@ code {
 header,
 main,
 footer {
-    width: 80%;
-    margin: 0 auto;
-}
-
-@media (max-width: 799px) {
-
-    header,
-    main,
-    footer {
-        width: 90%;
-        margin: 0 auto;
-    }
+    width: min(90%, 1000px);
 }
 
 header {
@@ -178,7 +171,6 @@ header>div {
 }
 
 main {
-    padding: 10px 0;
     margin: 40px auto;
     flex-grow: 1;
     display: grid;
@@ -191,10 +183,15 @@ footer {
 }
 
 footer>div {
-    margin: 10px 0;
+    margin: 10px 0 20px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer div.footer-item {
+    margin: 0 0.75em;
 }
 
 footer a {
@@ -213,7 +210,6 @@ footer a:visited {
 
     footer>div {
         width: 100%;
-        margin: 0 auto;
         flex-direction: column;
     }
 
@@ -241,9 +237,11 @@ div.help-window {
     display: none;
 }
 
-div.help-window.active {
+div.help-window.active,
+input.popup-check:checked~div.popup-window {
     display: block;
     background-color: var(--help-window-background-color);
+    border-radius: 10px;
     opacity: 0.95;
     width: fit-content;
     height: fit-content;
@@ -256,7 +254,7 @@ div.help-window.active {
     bottom: 0;
     right: 0;
     margin: auto;
-    padding: 0.5rem 2rem 2rem 2rem;
+    padding: 0 2rem 2rem 2rem;
     box-shadow: 0px 0px 5px 1px var(--help-window-box-shadow);
     overflow-y: auto;
     scrollbar-width: thin;
@@ -295,19 +293,30 @@ span.key {
 
 div.links {
     margin: 20px 0;
-    display: grid;
+    display: flex;
     gap: 20px;
-    grid-template-columns: auto auto auto auto auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+div.licenses {
+    display: flex;
+    flex-direction: column;
 }
 
 @media (max-width: 799px) {
     div.links {
-        display: flex;
+        justify-content: center;
         flex-direction: column;
     }
 
     div.links>div {
         margin: 0 auto;
+    }
+
+    div.licenses>small {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -353,11 +362,8 @@ svg.snow-svg>text.snowflake-color-5 {
     fill: var(--snowflake-5);
 }
 
-span.umbrella-folded,
 picture.umbrella-folded,
-picture.umbrella-open:hover,
-span.snowing {
-    font-size: 24px;
+picture.umbrella-open:hover {
     cursor: pointer;
 }
 
@@ -469,4 +475,18 @@ div.work-url {
 
 div.work-note {
     grid-area: work-note;
+}
+
+label.popup-label {
+    cursor: pointer;
+}
+
+input.popup-check,
+div.popup-window {
+    display: none;
+}
+
+div.popup-window>div {
+    display: flex;
+    flex-direction: row-reverse;
 }
