@@ -155,18 +155,7 @@ code {
 header,
 main,
 footer {
-    width: 80%;
-    margin: 0 auto;
-}
-
-@media (max-width: 799px) {
-
-    header,
-    main,
-    footer {
-        width: 90%;
-        margin: 0 auto;
-    }
+    width: min(90%, 1000px);
 }
 
 header {
