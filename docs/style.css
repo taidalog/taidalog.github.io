@@ -237,7 +237,8 @@ div.help-window {
     display: none;
 }
 
-div.help-window.active {
+div.help-window.active,
+input.popup-check:checked~div.popup-window {
     display: block;
     background-color: var(--help-window-background-color);
     opacity: 0.95;
@@ -477,25 +478,4 @@ div.popup-window {
 div.popup-window>div {
     display: flex;
     flex-direction: row-reverse;
-}
-
-input.popup-check:checked~div.popup-window {
-    display: block;
-    background-color: var(--help-window-background-color);
-    opacity: 0.95;
-    width: fit-content;
-    height: fit-content;
-    max-width: 80%;
-    max-height: 80%;
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    padding: 0 2rem 2rem 2rem;
-    box-shadow: 0px 0px 5px 1px var(--help-window-box-shadow);
-    overflow-y: auto;
-    scrollbar-width: thin;
 }
