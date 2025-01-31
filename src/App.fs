@@ -1,6 +1,6 @@
-// taidalog's portfolio Version 1.0.1
+// taidalog's portfolio
 // https://github.com/taidalog/taidalog.github.io
-// Copyright (c) 2023-2024 taidalog
+// Copyright (c) 2023-2025 taidalog
 // This software is licensed under the MIT License.
 // https://github.com/taidalog/taidalog.github.io/blob/main/LICENSE
 
@@ -47,11 +47,9 @@ module App =
             // keyboard shortcut
             document.onkeydown <- fun (e: KeyboardEvent) -> keyboardshortcut e
 
-            (document.getElementById "snowSection")
-                .setAttribute ("width", string document.body.clientWidth)
+            (document.getElementById "snowSection").setAttribute ("width", string document.body.clientWidth)
 
-            (document.getElementById "snowSection")
-                .setAttribute ("height", string document.body.scrollHeight)
+            (document.getElementById "snowSection").setAttribute ("height", string document.body.scrollHeight)
 
             // snow falling
             [ 0..17 ] |> List.iter (fun _ -> fall false)

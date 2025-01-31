@@ -1,0 +1,544 @@
+<!--
+  taidalog's portfolio
+  https://github.com/taidalog/taidalog.github.io
+  Copyright (c) 2023-2025 taidalog
+  This software is licensed under the MIT License.
+  https://github.com/taidalog/taidalog.github.io/blob/main/LICENSE
+-->
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <title>taidalog's portfolio</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <meta name="description" content="taidalog's portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://raw.githubusercontent.com/taidalog/taidalog.github.io/main/docs/image/apple-touch-icon.png?v=1.0.1">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://raw.githubusercontent.com/taidalog/taidalog.github.io/main/docs/image/favicon-32x32.png?v=1.0.1">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://raw.githubusercontent.com/taidalog/taidalog.github.io/main/docs/image/favicon-16x16.png?v=1.0.1">
+    <link rel="manifest"
+        href="https://raw.githubusercontent.com/taidalog/taidalog.github.io/main/docs/image/site.webmanifest?v=1.0.1">
+    <link rel="mask-icon"
+        href="https://raw.githubusercontent.com/taidalog/taidalog.github.io/main/docs/image/safari-pinned-tab.svg?v=1.0.1"
+        color="#65a2ac">
+    <link rel="shortcut icon"
+        href="https://raw.githubusercontent.com/taidalog/taidalog.github.io/main/docs/image/favicon.ico?v=1.0.1">
+    <meta name="apple-mobile-web-app-title" content="taidalog">
+    <meta name="application-name" content="taidalog">
+    <meta name="msapplication-TileColor" content="#65a2ac">
+    <meta name="msapplication-config"
+        content="https://raw.githubusercontent.com/taidalog/taidalog.github.io/main/docs/image/browserconfig.xml?v=1.0.1">
+    <meta name="theme-color" content="#65a2ac">
+    <!-- OGP -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="taidalog's portfolio" />
+    <meta property="og:description" content="taidalog's portfolio" />
+    <meta property="og:url" content="https://taidalog.github.io/" />
+    <meta property="og:site_name" content="taidalog's portfolio" />
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/taidalog/taidalog.github.io/main/docs/image/taidalog.png" />
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@taidalog">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;700&text=*&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&text=taidalog%27sportfolio&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wdth,wght@70,300&text=abcdefghijklmnopqrstuvwxyz%20&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400&text=abcdefghijklmnopqrstuvwxyz%20;:&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2NDYJX0HD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        if (window.location.hostname === "localhost" || window.location.pathname.startsWith("/test.")) {
+            gtag('config', 'G-Q2NDYJX0HD', { 'debug_mode': true });
+        } else {
+            gtag('config', 'G-Q2NDYJX0HD');
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="src/App.fs.js"></script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1 translate="no">taidalog's portfolio</h1>
+        </div>
+        <div>
+            <picture id="umbrellaOpen" class="umbrella-open">
+                <source media="(prefers-color-scheme: dark)" srcset="image/umbrella-open-white.svg">
+                <img src="image/umbrella-open.svg" width="24px" alt="傘を差す" title="傘を差す">
+            </picture>
+
+            <picture id="umbrellaFolded" class="umbrella-folded display-none">
+                <source media="(prefers-color-scheme: dark)" srcset="image/umbrella-folded-white.svg">
+                <img src="image/umbrella-folded.svg" width="24px" alt="傘をたたむ" title="傘をたたむ">
+            </picture>
+        </div>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>personal information</h2>
+
+            <div>
+                <ul>
+                    <li><span class="key">name:</span> taidalog</li>
+                    <li><span class="key">age:</span> <label class="popup-label" for="popupCheck"><span
+                                title="任意の桁数の整数">[0-9]+</span></label></li>
+                    <li><span class="key">location:</span> Earth</li>
+                </ul>
+            </div>
+
+            <input id="popupCheck" class="popup-check" type="checkbox" tabindex="-1" autocomplete="off">
+            <div class="popup-window">
+                <div>
+                    <label for="popupCheck">
+                        <span class="material-symbols-outlined help-close" translate="no">
+                            close
+                        </span>
+                    </label>
+                </div>
+                <p>これは正規表現というものです。<br>
+                    <c>[0-9]</c>は0から9のいずれか一文字を表し、<br>
+                    <c>+</c>はその直前の要素が1回以上連続することを表します。<br>全体として「任意の桁数の整数」を表します。
+                </p>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>job</h2>
+
+            <div>
+                <ul>
+                    <li><span class="key">name:</span> 高校教師</li>
+                    <li><span class="key">subject:</span> 情報</li>
+                    <li><span class="key">licenses:</span> 情報, 英語</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <section class="skills">
+            <h2>skills</h2>
+
+            <div>
+
+                <div class="skill-container">
+                    <div class="skill-logo">
+                        <img src="image/logos/fsharp.svg" title="F#">
+                    </div>
+                    <div class="skill-name">F#</div>
+                    <div class="skill-note">
+                        推し言語。このページの雪もF#で降らせています。<br>関数の戻り値をパイプで次の関数に渡すのが楽しくて楽しくてもう。<br>
+                        最近はF#+FableでWebアプリケーションを作るのが好きです。<br><a href="https://taidalog.github.io/taidalab/"
+                            title="taidalab">taidalab</a>や<a href="https://taidalog.github.io/cronota/"
+                            title="cronota">cronota</a>や<a href="https://taidalog.github.io/ccc/"
+                            title="ccc">ccc</a>などを作りました。<br><small>Logo is from <a
+                                href="https://foundation.fsharp.org/logo">https://foundation.fsharp.org/logo</a>.</small>
+                    </div>
+                </div>
+
+                <div class="skill-container">
+                    <div class="skill-logo">
+                        <img src="image/logos/powershell_128.svg" title="Windows PowerShell">
+                    </div>
+                    <div class="skill-name">Windows PowerShell</div>
+                    <div class="skill-note">
+                        業務と趣味での簡単なデータ処理や自動化などに使っています。<br>パイプの楽しさを教えてくれた言語です。<br>クラスの定義くらいまでのことができます。<br><small>Logo is
+                            from <a
+                                href="https://github.com/PowerShell/PowerShell/tree/master/assets">https://github.com/PowerShell/PowerShell/tree/master/assets</a>.</small>
+                    </div>
+                </div>
+
+                <div class="skill-container">
+                    <div class="skill-logo">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="image/logos/vba-white.svg">
+                            <img src="image/logos/vba.svg" alt="VBA" title="VBA">
+                        </picture>
+                    </div>
+                    <div class="skill-name">VBA</div>
+                    <div class="skill-note">
+                        業務での簡単なデータ処理や自動化などに使っています。<br>始めて触った言語です。
+                    </div>
+                </div>
+
+                <div class="skill-container">
+                    <div class="skill-logo">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="image/logos/gas-white.svg">
+                            <img src="image/logos/gas.svg" alt="GAS" title="GAS">
+                        </picture>
+                    </div>
+                    <div class="skill-name">GAS</div>
+                    <div class="skill-note">
+                        業務での簡単なデータ処理や自動化などに使っています。<br>メソッドチェーンが楽しい。
+                    </div>
+                </div>
+
+                <div class="skill-container">
+                    <div class="skill-logo">
+                        <img src="image/logos/python-logo-only.svg" title="Python">
+                    </div>
+                    <div class="skill-name">Python&reg;</div>
+                    <div class="skill-note">
+                        授業や課外活動で使っています。<br>なるべく関数プログラミングをしたい。けど授業では手続き型。<br><small>The Python Logo is by <a
+                                href="https://www.python.org/psf-landing/">The Python
+                                Software Foundation</a>.<br><a
+                                href="https://www.python.org/community/logos/">https://www.python.org/community/logos/</a></small>
+                    </div>
+                </div>
+
+                <div class="skill-container">
+                    <div class="skill-logo">
+                        <img src="image/logos/js.svg" title="JavaScript">
+                    </div>
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-note">
+                        F#の変換先。あとGASの中身。<br>
+                        <small>Logo is from <a
+                                href="https://github.com/voodootikigod/logo.js">https://github.com/voodootikigod/logo.js</a>.</small>
+                    </div>
+                </div>
+
+                <div class="skill-container">
+                    <div class="skill-logo">
+                        <img src="image/logos/HTML5_Logo.svg" title="HTML">
+                    </div>
+                    <div class="skill-name">HTML</div>
+                    <div class="skill-note">
+                        タグを書いて簡単なWebページを作ることができます。<a href="https://taidalog.github.io/taidalab/"
+                            title="taidalab">taidalab</a>などを作りました。<br><small>HTML
+                            Logo by <a href="https://www.w3.org/">W3C</a> is licensed under the <a
+                                href="http://creativecommons.org/licenses/by/3.0/">Creative
+                                Commons Attribution 3.0 License</a>.<br>Logo is from <a
+                                href="https://www.w3.org/html/logo/">https://www.w3.org/html/logo/</a>.</small>
+                    </div>
+                </div>
+
+                <div class="skill-container">
+                    <div class="skill-logo">
+                        <img src="image/logos/CSS3_logo_and_wordmark.svg" title="CSS">
+                    </div>
+                    <div class="skill-name">CSS</div>
+                    <div class="skill-note">
+                        Grid Layout (<code>display: grid;</code>) を使って要素を配置することができます。<br><small>Logo is from <a
+                                href="https://ja.m.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:CSS3_logo_and_wordmark.svg">https://ja.m.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:CSS3_logo_and_wordmark.svg</a>.</small>
+                    </div>
+                </div>
+
+                <div class="skill-container">
+                    <div class="skill-logo">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="image/logos/regex-white.svg">
+                            <img src="image/logos/regex.svg" alt="正規表現" title="正規表現">
+                        </picture>
+                    </div>
+                    <div class="skill-name">正規表現</div>
+                    <div class="skill-note">
+                        [肯否]定[先後]読み?は、その都度検索しながらなら使えます。複数行モードが使えます。
+                    </div>
+                </div>
+
+                <div class="skill-container">
+                    <div class="skill-logo">
+                        <img src="image/logos/Git-Icon-1788C.svg" title="Git">
+                    </div>
+                    <div class="skill-name">Git&trade;</div>
+                    <div class="skill-note">
+                        <code>switch -c</code>して<code>add</code>して<code>commit</code>して<code>merge</code>して<code>push</code>できます。<br><small>Git
+                            Logo by <a href="https://twitter.com/jasonlong">Jason Long</a> is licensed under the <a
+                                href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0
+                                Unported License</a>.<br>Logo is from <a
+                                href="https://git-scm.com/downloads/logos">https://git-scm.com/downloads/logos</a>.</small>
+                    </div>
+                </div>
+
+                <div class="skill-container">
+                    <div class="skill-logo">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="image/logos/github-mark-white.svg">
+                            <img src="image/logos/github-mark.svg" alt="GitHub" title="GitHub">
+                        </picture>
+                    </div>
+                    <div class="skill-name">
+                        GitHub</div>
+                    <div class="skill-note">
+                        Pull Requestしてmergeできます。<br>あとissueとmilestoneでタスク管理をしています。<br><small>Logo is from <a
+                                href="https://github.com/logos">https://github.com/logos</a>.</small>
+                    </div>
+                </div>
+
+                <div class="skill-container">
+                    <div class="skill-logo">
+                        <img src="image/logos/vscode.svg" title="Visual Studio Code">
+                    </div>
+                    <div class="skill-name">
+                        Visual Studio Code</div>
+                    <div class="skill-note">
+                        文字を入力できます。<br><small>Logo is from <a
+                                href="https://code.visualstudio.com/brand">https://code.visualstudio.com/brand</a>.</small>
+                    </div>
+                </div>
+
+                <div class="skill-container">
+                    <div class="skill-logo">
+                        <img src="image/logos/fable_logo.png" title="Fable">
+                    </div>
+                    <div class="skill-name">
+                        Fable</div>
+                    <div class="skill-note">
+                        F#で書いたコードをJavaScriptに変換してもらうことができます。<br><small>Logo is from <a
+                                href="https://github.com/fable-compiler/Fable">https://github.com/fable-compiler/Fable</a>.</small>
+                    </div>
+                </div>
+
+                <div class="skill-container">
+                    <div class="skill-logo">
+                        <img src="image/logos/win.svg" title="Windows">
+                    </div>
+                    <div class="skill-name">Windows</div>
+                    <div class="skill-note">
+                        困らない程度に使えます。<br>ないと困ります。
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="works">
+            <h2>works</h2>
+
+            <div>
+
+                <div class="work-container">
+                    <div class="work-name">taidalab</div>
+                    <div class="work-url"><a href="https://taidalog.github.io/taidalab/"
+                            title="taidalab">https://taidalog.github.io/taidalab/</a></div>
+                    <div class="work-note">
+                        高等学校「情報Ⅰ」の学習用Webアプリケーションです。<br>10進数と2進数の変換の反復練習や、ネットワークシミュレータなどがあります。<br>高校生の勉強の助けになればと思って作りました。<br>たまに授業で使ったよというご報告をいただいて嬉しくなります。
+                    </div>
+                </div>
+
+                <div class="work-container">
+                    <div class="work-name">
+                        cronota</div>
+                    <div class="work-url">
+                        <a href="https://taidalog.github.io/cronota/"
+                            title="cronota">https://taidalog.github.io/cronota/</a>
+                    </div>
+                    <div class="work-note">
+                        メモを見ながら時間を計るためのストップウォッチです。<br>スピーチや面接の練習などでの使用を想定しています。</div>
+                </div>
+
+                <div class="work-container">
+                    <div class="work-name">
+                        ccc</div>
+                    <div class="work-url">
+                        <a href="https://taidalog.github.io/ccc/" title="ccc">https://taidalog.github.io/ccc/</a>
+                    </div>
+                    <div class="work-note">
+                        コマンドを入力して使用する、カスタマイズ可能なカウントダウンタイマーです。<br>プレゼンテーションなどで発表の時間と質疑応答の時間を自動で切り替えるのに使えます。</div>
+                </div>
+
+                <div class="work-container">
+                    <div class="work-name">
+                        Fermata</div>
+                    <div class="work-url">
+                        <a href="https://www.nuget.org/packages/Fermata"
+                            title="Fermata">https://www.nuget.org/packages/Fermata</a>
+                    </div>
+                    <div class="work-note">
+                        F#で私がよく書くコードをまとめた自作ライブラリ (という名のコードスニペット集)。<br>Fableのプロジェクトで使用できます。</div>
+                </div>
+
+                <div class="work-container">
+                    <div class="work-name">
+                        get_the_list_of_directory_size</div>
+                    <div class="work-url">
+                        <a href="https://github.com/taidalog/get_the_list_of_directory_size"
+                            title="get_the_list_of_directory_size">https://github.com/taidalog/get_the_list_of_directory_size</a>
+                    </div>
+                    <div class="work-note">
+                        フォルダサイズの一覧を取得するためのWindows PowerShellのスクリプト。<br>なんだか需要がある様子。</div>
+                </div>
+
+                <div class="work-container">
+                    <div class="work-name">
+                        Suwarin</div>
+                    <div class="work-url">
+                        <a href="https://github.com/taidalog/Suwarin"
+                            title="Suwarin">https://github.com/taidalog/Suwarin</a>
+                    </div>
+                    <div class="work-note">
+                        Excel ファイル上で座席表を作成するマクロ。<br>出席番号コピペ+クリック2回くらいで座席表ができます。</div>
+                </div>
+
+            </div>
+
+            <p>
+                <a href="https://github.com/taidalog?tab=repositories" title="Repositories on GitHub">... and more!</a>
+            </p>
+        </section>
+
+        <section class="links">
+            <h2>links</h2>
+
+            <div class="links">
+
+                <div>
+                    <a href="https://taidalog.hatenablog.com" alt="Hatena Blog">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)"
+                                srcset="image/logos/hatenablog-logotype-white.svg">
+                            <img src="image/logos/hatenablog-logotype.svg" alt="Hatena Blog" title="Hatena Blog">
+                        </picture>
+                    </a>
+                </div>
+
+                <div>
+                    <a href="https://twitter.com/taidalog" alt="Twitter">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="image/logos/x-white.svg">
+                            <img src="image/logos/x-black.png" alt="Twitter" title="Twitter">
+                        </picture>
+                    </a>
+                </div>
+
+                <div>
+                    <a href="https://www.instagram.com/taidalog/" alt="Instagram">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="image/logos/Instagram_Glyph_White.svg">
+                            <img src="image/logos/Instagram_Glyph_Black.svg" alt="Instagram" title="Instagram">
+                        </picture>
+                    </a>
+                </div>
+
+                <div>
+                    <a href="https://github.com/taidalog" alt="GitHub">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="image/logos/github-mark-white.svg">
+                            <img src="image/logos/github-mark.svg" alt="GutHub" title="GutHub">
+                        </picture>
+                    </a>
+                </div>
+
+                <div>
+                    <a href="https://www.nuget.org/profiles/taidalog" alt="NuGet">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="image/logos/nuget_512_mono_w.png">
+                            <img src="image/logos/nuget_512_mono_b.png" alt="NuGet" title="NuGet">
+                        </picture>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="licenses">
+                <small><a href="https://brand.hatena.co.jp/hatenablog">Hatena Blog logo</a>: &copy; Hatena Co.,
+                    Ltd.</small>
+                <small><a href="https://about.x.com/ja/who-we-are/brand-toolkit">X (Twitter) logo</a>: &copy; 2024 X
+                    Corp.</small>
+                <small><a href="https://about.meta.com/ja/brand/resources/instagram/instagram-brand/">Instagram
+                        logo</a>: &copy; 2024 Meta</small>
+                <small><a href="https://github.com/logos">GitHub logo</a>: &copy; 2024 GitHub, Inc.</small>
+                <small><a href="https://github.com/NuGet/Media/tree/main/Images/MainLogo/512x512">NuGet logo</a>:
+                    &copy; Microsoft 2024/<a href="https://creativecommons.org/licenses/by/2.0/">CC BY
+                        2.0</a></small>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>contacts</h2>
+
+            <div>
+                <p>
+                    taidalog が作ったツール等へのご感想やご要望、お褒めの言葉、賛辞、美辞麗句、その他お問い合わせは、<a href="https://odaibako.net/u/taidalog"
+                        alt="お題箱">お題箱</a>に投稿していただくか、<a href="https://twitter.com/taidalog" alt="Twitter">Twitter</a>や<a
+                        href="https://www.instagram.com/taidalog/" alt="Instagram">Instagram</a>でDMを、あるいは<a
+                        href="https://github.com/taidalog?tab=repositories"
+                        alt="Repositories on GitHub">GitHub</a>でissueを送ってください。
+                </p>
+            </div>
+
+        </section>
+
+        <div id="informationPolicyWindow" class="help-window">
+            <div class="help-close-outer">
+                <span id="informationPolicyClose" class="material-symbols-outlined help-close" translate="no">
+                    close
+                </span>
+            </div>
+            <h2>情報の外部送信について</h2>
+            <p>アクセス状況の分析のため、当サイトでは「Google アナリティクス」というサービスを利用しています。それに伴い、以下のような利用者のアクセス情報を外部へ送信しています。</p>
+            <h3>送信情報</h3>
+            <ul>
+                <li>閲覧したページの URL</li>
+                <li>閲覧したページのタイトル</li>
+                <li>当サイトを閲覧した日時</li>
+                <li>当サイトを閲覧した際の大まかな位置情報</li>
+                <li>当サイトを閲覧した際の IP アドレス</li>
+                <li>当サイトを閲覧した際のインターネット端末およびインターネットブラウザの種類</li>
+            </ul>
+            <h3>送信先</h3>
+            <ul>
+                <li>Google LLC</li>
+            </ul>
+            <h3>利用目的</h3>
+            <p>当サイトへのアクセス状況の分析およびコンテンツの改善のために利用しています。当該情報は個人を特定するものではありません。Google アナリティクスについては以下のページを参照してください。
+            <ul>
+                <li><a href="https://marketingplatform.google.com/about/analytics/terms/jp/">Google アナリティクス利用規約</a></li>
+                <li><a href="https://policies.google.com/technologies/partner-sites">Google のサービスを使用するサイトやアプリから収集した情報の
+                        Google による使用</a></li>
+                <li><a
+                        href="https://support.google.com/analytics/answer/11593727?hl=ja&ref_topic=1008008&sjid=3916650995392926123-AP">[GA4]
+                        データ収集 - アナリティクス ヘルプ</a></li>
+            </ul>
+        </div>
+
+    </main>
+
+    <section id="snowSection"></section>
+
+    <footer>
+        <div>
+            <div class="footer-item" translate="no"><small>&copy; 2023-2025 taidalog</small></div>
+            <div class="footer-item" translate="no"><small>
+                    <a href="https://github.com/taidalog/taidalog.github.io/releases">Version 1.1.0</a></small></div>
+            <div class="footer-item"><small><a href="#" id="informationPolicyLink">情報の外部送信について</a></small></div>
+            <div class="footer-item" translate="no"><small>
+                    <a href="https://github.com/taidalog/taidalog.github.io">Repository on GitHub</a></small></div>
+            <div class="footer-item"><small>Powered by <a id="footerFSharp" href="https://fsharp.org/"
+                        translate="no">F#</a>
+                    and <a id="footerFable" href="https://fable.io" translate="no">Fable</a>.
+                    Thank you!</small></div>
+        </div>
+    </footer>
+</body>
+
+</html>
