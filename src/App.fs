@@ -89,7 +89,10 @@ module App =
 
             let today = DateTime.Today
             if today.Month = 3 || (today.Month = 4 && today.Day < 8) then
-                document.body.classList.add "spring")
+                document.body.classList.add "spring"
+                (document.getElementById "fsharpDescriptionVariable").innerText <- "このページの桜もF#で舞わせています。"
+            else
+                (document.getElementById "fsharpDescriptionVariable").innerText <- "このページの雪もF#で降らせています。")
     )
 
     window.onresize <-
