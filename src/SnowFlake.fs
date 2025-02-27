@@ -6,6 +6,8 @@
 
 namespace TaidalogsPortfolio
 
+open System
+open System.Diagnostics
 open Browser.Dom
 open Browser.Types
 open Fable.Core
@@ -129,13 +131,13 @@ module SnowFlake =
                 let shouldStop =
                     (document.getElementById "umbrellaOpen").classList.contains "display-none"
 
-                printfn "should stop snow: %b" shouldStop
+                Debug.WriteLine $"should stop snow: %b{shouldStop}"
 
                 if shouldStop then
-                    printfn "stopping snow."
+                    Debug.WriteLine "stopping snow."
                     ()
                 else
-                    printfn "falling snow."
+                    Debug.WriteLine "falling snow."
                     fall shouldStop)
             (int (snowFlake.Duration * 1.1 * 1000.))
         |> ignore

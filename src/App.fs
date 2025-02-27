@@ -6,6 +6,7 @@
 
 namespace TaidalogsPortfolio
 
+open System
 open Browser.Dom
 open Browser.Types
 open Fable.Core
@@ -84,7 +85,14 @@ module App =
                     (document.getElementById "umbrellaOpen").classList.toggle "display-none"
                     |> ignore
 
-                    [ 0..17 ] |> List.iter (fun _ -> fall false))
+                    [ 0..17 ] |> List.iter (fun _ -> fall false)
+
+            let today = DateTime.Today
+            if today.Month = 3 || (today.Month = 4 && today.Day < 8) then
+                document.body.classList.add "spring"
+                (document.getElementById "fsharpDescriptionVariable").innerText <- "このページの桜もF#で舞わせています。"
+            else
+                (document.getElementById "fsharpDescriptionVariable").innerText <- "このページの雪もF#で降らせています。")
     )
 
     window.onresize <-
