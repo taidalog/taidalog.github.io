@@ -88,10 +88,11 @@ module App =
                     [ 0..17 ] |> List.iter (fun _ -> fall false)
 
             let today = DateTime.Today
-            if today.Month = 3 || (today.Month = 4 && today.Day < 8) then
+            if (today.Month = 3 && today.Day = 1) || (today.Month = 4 && today.Day < 8) then
                 document.body.classList.add "spring"
                 (document.getElementById "fsharpDescriptionVariable").innerText <- "このページの桜もF#で舞わせています。"
             else
+                document.body.classList.remove "spring"
                 (document.getElementById "fsharpDescriptionVariable").innerText <- "このページの雪もF#で降らせています。")
     )
 
