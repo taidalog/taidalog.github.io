@@ -25,7 +25,7 @@ module App =
 
             // regex explanation popover
             (document.getElementById "regexExplanationSpan").onclick <-
-                fun _ -> (document.getElementById "regexExplanation")?showPopover ()
+                fun _ -> (document.getElementById "regexExplanation")?togglePopover ()
 
             (document.getElementById "snowSection").setAttribute ("width", string document.body.clientWidth)
 
