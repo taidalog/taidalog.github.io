@@ -227,70 +227,6 @@ footer a:visited {
     }
 }
 
-/*
-    help window
-    information policy window
-*/
-span.help-button,
-span.help-close {
-    font-size: 24px;
-    cursor: pointer;
-}
-
-div.help-close-outer {
-    width: 100%;
-    text-align: right;
-}
-
-div.help-window {
-    display: none;
-}
-
-div.help-window.active,
-input.popup-check:checked~div.popup-window {
-    display: block;
-    background-color: var(--help-window-background-color);
-    border-radius: 10px;
-    opacity: 0.95;
-    width: fit-content;
-    height: fit-content;
-    max-width: 80%;
-    max-height: 80%;
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    padding: 0 2rem 2rem 2rem;
-    box-shadow: 0px 0px 5px 1px var(--help-window-box-shadow);
-    overflow-y: auto;
-    scrollbar-width: thin;
-}
-
-div.help-window h2 {
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-}
-
-div.help-window a {
-    color: var(--a-color);
-}
-
-div.help-window a:visited {
-    color: var(--a-visited-color);
-}
-
-span.material-symbols-outlined:hover {
-    font-variation-settings:
-        'FILL' 1
-}
-
-span.material-symbols-outlined.help-close:hover {
-    color: var(--background-color);
-    background-color: var(--text-color);
-}
-
 a>picture>img,
 a>img {
     height: 40px;
@@ -508,20 +444,9 @@ div.work-note {
     grid-area: work-note;
 }
 
-label.popup-label {
-    cursor: pointer;
-}
-
-input.popup-check,
-div.popup-window {
-    display: none;
-}
-
-div.popup-window>div {
-    display: flex;
-    flex-direction: row-reverse;
-}
-
+/*
+    for dialog (popover)
+*/
 dialog {
     background-color: var(--background-color);
     color: var(--foreground-color);
@@ -534,7 +459,6 @@ dialog {
     padding: 0;
     box-shadow: 0px 0px 5px 1px var(--help-window-box-shadow);
     overflow-y: hidden;
-    /* scrollbar-width: thin; */
 }
 
 dialog::backdrop {

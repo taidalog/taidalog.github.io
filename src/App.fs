@@ -14,25 +14,6 @@ open Fable.Core.JsInterop
 open SnowFlake
 
 module App =
-
-    let keyboardshortcut (e: KeyboardEvent) =
-        let popupCheck = document.getElementById "popupCheck" :?> HTMLInputElement
-        let informationPolicyWindow = document.getElementById "informationPolicyWindow"
-
-        let isInformationPolicyWindowActive =
-            informationPolicyWindow.classList
-            |> (fun x -> JS.Constructors.Array?from(x))
-            |> Array.contains "active"
-
-        match e.key with
-        | "Escape" ->
-            if isInformationPolicyWindowActive then
-                informationPolicyWindow.classList.remove "active"
-
-            if popupCheck.checked then
-                popupCheck.checked <- false
-        | _ -> ()
-
     window.addEventListener (
         "DOMContentLoaded",
         (fun _ ->
@@ -42,15 +23,9 @@ module App =
                     event.preventDefault ()
                     (document.getElementById "informationPolicyWindow")?togglePopover ()
 
-            // (document.getElementById "informationPolicyClose").onclick <-
-            //     fun _ -> (document.getElementById "informationPolicyWindow").classList.remove "active"
-
             // regex explanation popover
             (document.getElementById "regexExplanationSpan").onclick <-
                 fun _ -> (document.getElementById "regexExplanation")?showPopover ()
-
-            // keyboard shortcut
-            document.onkeydown <- fun (e: KeyboardEvent) -> keyboardshortcut e
 
             (document.getElementById "snowSection").setAttribute ("width", string document.body.clientWidth)
 
