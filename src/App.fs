@@ -40,10 +40,10 @@ module App =
             (document.getElementById "informationPolicyLink").onclick <-
                 fun event ->
                     event.preventDefault ()
-                    (document.getElementById "informationPolicyWindow").classList.add "active"
+                    (document.getElementById "informationPolicyWindow")?togglePopover ()
 
-            (document.getElementById "informationPolicyClose").onclick <-
-                fun _ -> (document.getElementById "informationPolicyWindow").classList.remove "active"
+            // (document.getElementById "informationPolicyClose").onclick <-
+            //     fun _ -> (document.getElementById "informationPolicyWindow").classList.remove "active"
 
             // regex explanation popover
             (document.getElementById "regexExplanationSpan").onclick <-
