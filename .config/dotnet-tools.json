@@ -8,13 +8,6 @@
         "fable"
       ],
       "rollForward": false
-    },
-    "fantomas": {
-      "version": "7.0.0",
-      "commands": [
-        "fantomas"
-      ],
-      "rollForward": false
     }
   }
 }
