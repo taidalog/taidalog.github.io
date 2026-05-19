@@ -79,6 +79,7 @@ body.spring {
     --snowflake-4: hsl(98, 50%, 70%);
     --snowflake-5: #cccccc;
 }
+
 html,
 body {
     height: 100%;
@@ -367,6 +368,7 @@ body.spring svg.snow-svg>text.italic {
     font-weight: 400;
     font-style: normal;
 }
+
 svg.snow-svg>text.snowflake-color-0 {
     fill: var(--snowflake-0);
 }
@@ -518,4 +520,62 @@ div.popup-window {
 div.popup-window>div {
     display: flex;
     flex-direction: row-reverse;
+}
+
+dialog {
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    opacity: 0.95;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    box-shadow: 0px 0px 5px 1px var(--help-window-box-shadow);
+    overflow-y: hidden;
+    /* scrollbar-width: thin; */
+}
+
+dialog::backdrop {
+    background-color: var(--background-color);
+    opacity: 0.5;
+}
+
+dialog>div {
+    padding: 0;
+    display: grid;
+    grid-template-rows: repeat(auto, minmax(200px, 1fr));
+}
+
+dialog>div>header {
+    display: flex;
+    justify-content: flex-end;
+    height: fit-content;
+}
+
+dialog>div>header>button {
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+}
+
+dialog>div>header>button:hover {
+    color: var(--background-color);
+    background-color: var(--text-color);
+}
+
+dialog>div>div {
+    padding: 0 2rem 1rem 2rem;
+    max-width: 80vh;
+    max-height: 60vh;
+    overflow-y: scroll;
+}
+
+span.regex-explanation-span {
+    cursor: pointer;
 }

@@ -45,6 +45,10 @@ module App =
             (document.getElementById "informationPolicyClose").onclick <-
                 fun _ -> (document.getElementById "informationPolicyWindow").classList.remove "active"
 
+            // regex explanation popover
+            (document.getElementById "regexExplanationSpan").onclick <-
+                fun _ -> (document.getElementById "regexExplanation")?showPopover ()
+
             // keyboard shortcut
             document.onkeydown <- fun (e: KeyboardEvent) -> keyboardshortcut e
 
@@ -88,6 +92,7 @@ module App =
                     [ 0..17 ] |> List.iter (fun _ -> fall false)
 
             let today = DateTime.Today
+
             if (today.Month = 3 && today.Day = 1) || (today.Month = 4 && today.Day < 8) then
                 document.body.classList.add "spring"
                 (document.getElementById "fsharpDescriptionVariable").innerText <- "このページの桜もF#で舞わせています。"
