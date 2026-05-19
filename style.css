@@ -475,6 +475,7 @@ dialog>div {
 dialog>div>header {
     display: flex;
     justify-content: flex-end;
+    width: 100%;
     height: fit-content;
 }
 
@@ -495,9 +496,15 @@ dialog>div>header>button:hover {
 
 dialog>div>div {
     padding: 0 2rem 1rem 2rem;
-    max-width: 80vh;
+    max-width: 80vw;
     max-height: 60vh;
     overflow-y: scroll;
+}
+
+@media (max-width: 799px) {
+    dialog>div>div {
+        max-width: 70vw;
+    }
 }
 
 span.regex-explanation-span {
