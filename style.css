@@ -507,6 +507,10 @@ dialog>div>div {
     }
 }
 
+dialog h2 {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
 span.regex-explanation-span {
     cursor: pointer;
 }
