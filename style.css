@@ -188,19 +188,12 @@ main {
 
 footer {
     color: var(--pale-color);
-    margin: 40px auto 20px;
-}
-
-footer>div {
-    margin: 10px 0 20px;
+    margin: 50px auto 40px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-footer div.footer-item {
-    margin: 0 0.75em;
+    gap: 1.5em;
 }
 
 footer a {
@@ -215,15 +208,10 @@ footer a:visited {
 @media (max-width: 799px) {
     footer {
         margin-top: 20px;
-    }
-
-    footer>div {
         width: 100%;
         flex-direction: column;
-    }
-
-    footer div.footer-item {
-        margin: 0 auto;
+        align-items: center;
+        gap: 0.5em;
     }
 }
 
